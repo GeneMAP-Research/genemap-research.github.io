@@ -5,9 +5,19 @@ layout: default
 
 # GeneMAP Resources
 
-{: note-title }
+{: .note-title }
 > My note title
 No title
+
+
+{: .imputation }
+Imputation Service.
+Find the link [here]()
+
+
+{: .gwas }
+GWAS Workflow.
+Find the link [here]()
 
 
 {: .warning }
