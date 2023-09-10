@@ -40,7 +40,7 @@ This is a highlight
 {: .question }
 > This is a qustion
 >
-{: .opaque }
+> {: .opaque }
 > {: .hint }
 > Here is a hint
 
