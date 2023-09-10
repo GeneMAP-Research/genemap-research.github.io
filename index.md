@@ -5,8 +5,8 @@ layout: default
 
 # GeneMAP Resources
 
-{: no-title }
-> No title
+{: note-title }
+> My note title
 No title
 
 
