@@ -5,21 +5,11 @@ layout: default
 
 # GeneMAP Resources
 
-![](assets/img/genemap-imputation.svg)
-![](assets/img/genemap-gwas.svg)
-![](assets/img/genemap-ngs.svg)
-
-
-
-{: .note-title }
-> My note title
-> No title
+![](assets/img/genemap-imputation.svg) ![](assets/img/genemap-gwas.svg) ![](assets/img/genemap-ngs.svg)
 
 
 {: .imputation }
 > <a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a>
->![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-imputation.svg)
-
 
 {: .note-title }
 > {: .opaque }
@@ -47,3 +37,8 @@ This is a highlight
 >
 > {: .hint }
 > Here is a hint
+
+
+{: .note-title }
+> My note title
+> No title
