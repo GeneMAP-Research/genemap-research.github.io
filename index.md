@@ -11,7 +11,8 @@ layout: default
 
 
 {: .imputation }
-> ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-imputation.svg)
+> <a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a>
+>![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-imputation.svg)
 
 
 {: .note-title }
