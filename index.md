@@ -11,7 +11,8 @@ layout: default
 
 
 {: .imputation }
-Imputation Service. Find the link [here]()
+> ![](assets/img/genemap-imputation.svg)
+> Imputation Service. Find the link [here]()
 
 
 {: .gwas }

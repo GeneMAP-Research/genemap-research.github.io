@@ -68,10 +68,10 @@ callouts_opacity: 0.3
 callouts:
   imputation:
     title: "Imputation Service"
-    color: red
+    color: green
   gwas:
     title: GWAS
-    color: red
+    color: green
   warning:
     title: Warning
     color: red
