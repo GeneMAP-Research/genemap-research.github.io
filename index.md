@@ -5,6 +5,11 @@ layout: default
 
 # GeneMAP Resources
 
+
+![](assets/img/genemap-gwas.svg)
+
+
+
 {: .note-title }
 > My note title
 > No title
