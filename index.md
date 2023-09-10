@@ -11,12 +11,12 @@ layout: default
 
 
 {: .imputation }
-> ![](assets/img/genemap-imputation.svg)
-> Imputation Service. Find the link [here]()
+> ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-imputation.svg)
 
 
-{: .gwas }
-GWAS Workflow. Find the link [here]()
+{: .note-title }
+> ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-ngs.svg)
+
 
 
 {: .warning }
