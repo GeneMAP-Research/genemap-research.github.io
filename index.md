@@ -16,6 +16,10 @@ layout: default
 > ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-ngs.svg)
 
 
+```
+$ echo "this is a code block"
+```
+
 
 {: .warning }
 A warning
