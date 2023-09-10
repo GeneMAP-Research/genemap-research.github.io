@@ -5,6 +5,10 @@ layout: default
 
 # GeneMAP Resources
 
+{: no-title }
+> No title
+No title
+
 
 {: .warning }
 A warning
