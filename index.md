@@ -16,9 +16,18 @@ layout: default
 > ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-ngs.svg)
 
 
+
+This is a code block
 ```
-$ echo "this is a code block"
+echo "this is a code block"
 ```
+
+
+This is for loop
+```
+for chromosome in {1..22} X; do echo chr${chromosome}; done
+```
+
 
 
 {: .warning }
