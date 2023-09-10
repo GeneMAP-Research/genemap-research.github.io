@@ -10,7 +10,7 @@ logo: assets/img/genemap-resources-logo.png.svg
 
 permalink: pretty
 
-color_scheme: "dark"
+color_scheme: "light"
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -47,9 +47,9 @@ mermaid:
 
 # Aux links for the upper right navigation
 aux_links:
-  "<p align=\"center\"><img src=\"assets/img/gr-on-github.png\" height=\"50%\" width=\"50%\"></p>":
+  "GR on GitHub":
     - "https://github.com/GeneMAP-Research/genemap-resources"
-  "<p align=\"center\"><img src=\"assets/img/genemap-logo-2.jpeg\" height=\"60%\" width=\"60%\"></p>":
+  "<p align=\"center\"><img src=\"assets/img/genemap-logo-2.jpeg\" height=\"30%\" width=\"30%\"></p>":
     - "#" # genemap website here
 
 # Makes Aux links open in a new tab. Default is false
