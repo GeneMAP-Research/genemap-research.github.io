@@ -49,8 +49,8 @@ mermaid:
 aux_links:
   "GR on GitHub":
     - "https://github.com/GeneMAP-Research/genemap-resources"
-  "<p align=\"center\"><img src=\"assets/img/genemap-logo-2.jpeg\" height=\"30%\" width=\"30%\"></p>":
-    - "#" # genemap website here
+ # "<p align=\"center\"><img src=\"assets/img/genemap-logo-2.jpeg\" height=\"30%\" width=\"30%\"></p>":
+ #   - "#" # genemap website here
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
