@@ -7,17 +7,15 @@ layout: default
 
 {: .note-title }
 > My note title
-No title
+> No title
 
 
 {: .imputation }
-Imputation Service.
-Find the link [here]()
+Imputation Service. Find the link [here]()
 
 
 {: .gwas }
-GWAS Workflow.
-Find the link [here]()
+GWAS Workflow. Find the link [here]()
 
 
 {: .warning }
