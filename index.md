@@ -22,6 +22,7 @@ layout: default
 
 
 {: .note-title }
+> {: .opaque }
 > ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-ngs.svg)
 
 
