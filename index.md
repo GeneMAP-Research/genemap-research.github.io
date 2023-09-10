@@ -5,15 +5,7 @@ layout: default
 
 # GeneMAP Resources
 
-![](assets/img/genemap-imputation.svg) ![](assets/img/genemap-gwas.svg) ![](assets/img/genemap-ngs.svg)
-
-
-{: .imputation }
-> <a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a>
-
-{: .note-title }
-> {: .opaque }
-> ![https://esohkevin.github.io/genemapimputationservice/](assets/img/genemap-ngs.svg)
+<a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a> <a href="#"><img src="assets/img/genemap-gwas.svg"></a> <a href="#"><img src="assets/img/genemap-ngs.svg"></a>
 
 
 
@@ -48,6 +40,7 @@ This is a highlight
 {: .question }
 > This is a qustion
 >
+{: .opaque }
 > {: .hint }
 > Here is a hint
 
