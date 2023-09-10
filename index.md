@@ -5,8 +5,9 @@ layout: default
 
 # GeneMAP Resources
 
-
+![](assets/img/genemap-imputation.svg)
 ![](assets/img/genemap-gwas.svg)
+![](assets/img/genemap-ngs.svg)
 
 
 
