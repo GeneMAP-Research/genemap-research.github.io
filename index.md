@@ -17,7 +17,7 @@ has_toc: true
 
 ----
 
-<p align="center"><a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a></p>
+<p align="center"><a href="https://genemap-research.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a></p>
 
 ----
 
