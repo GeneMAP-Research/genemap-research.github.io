@@ -25,7 +25,7 @@ has_toc: true
 
 ----
 
-<p align="center"><a href="#"><img src="assets/img/genemap-ngs.svg"></a></p>
+<p align="center"><a href="#"><img src="assets/img/genemap-ngs-2.svg"></a></p>
 
 
 
