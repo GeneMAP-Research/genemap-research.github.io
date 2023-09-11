@@ -1,22 +1,36 @@
 ---
-title: GeneMAP Resources
+title: Resources
 layout: default
+nav_order: 1
+has_toc: false
 ---
 
 # GeneMAP Resources
 
-<a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a> <a href="#"><img src="assets/img/genemap-gwas.svg"></a> <a href="#"><img src="assets/img/genemap-ngs.svg"></a>
+
+## Imputation
+<p align="center"><a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a></p>
+
+----
+
+## GWAS 
+<p align="center"><a href="#"><img src="assets/img/genemap-gwas.svg"></a></p>
+
+----
+
+## NGS
+<p align="center"><a href="#"><img src="assets/img/genemap-ngs.svg"></a></p>
 
 
 
 This is a code block
-```
+```sh
 echo "this is a code block"
 ```
 
 
 This is for loop
-```
+```bash
 for chromosome in {1..22} X; do echo chr${chromosome}; done
 ```
 
