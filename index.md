@@ -9,6 +9,14 @@ has_toc: true
 
 ----
 
+<p align="center"><a href="#"><img src="assets/img/genemap-data.svg"></a></p>
+
+----
+
+<p align="center"><a href="#"><img src="assets/img/genemap-datamanagement.svg"></a></p>
+
+----
+
 <p align="center"><a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a></p>
 
 ----
