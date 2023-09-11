@@ -7,18 +7,16 @@ has_toc: true
 
 # GeneMAP Resources
 
+----
 
-## Imputation
 <p align="center"><a href="https://esohkevin.github.io/genemapimputationservice/"><img src="assets/img/genemap-imputation.svg"></a></p>
 
 ----
 
-## GWAS 
 <p align="center"><a href="#"><img src="assets/img/genemap-gwas.svg"></a></p>
 
 ----
 
-## NGS
 <p align="center"><a href="#"><img src="assets/img/genemap-ngs.svg"></a></p>
 
 
