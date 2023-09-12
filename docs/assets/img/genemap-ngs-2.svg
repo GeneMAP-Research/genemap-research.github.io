@@ -64,18 +64,16 @@
    <g id="container-id1">
     <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
      <g class="Page">
-      <g class="Group">
-       <g class="TextShape">
-        <g id="id3">
-         <rect class="BoundingBox" stroke="none" fill="none" x="5450" y="236" width="4606" height="2110"/>
-         <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Chilanka" font-size="1693px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="5700" y="1601"><tspan fill="rgb(51,51,51)" stroke="none" style="white-space: pre">ngs</tspan></tspan></tspan></text>
-        </g>
+      <g class="TextShape">
+       <g id="id3">
+        <rect class="BoundingBox" stroke="none" fill="none" x="4950" y="436" width="4606" height="2110"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Chilanka" font-size="1552px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="5200" y="1700"><tspan fill="rgb(51,51,51)" stroke="none" style="white-space: pre">ngs</tspan></tspan></tspan></text>
        </g>
-       <g class="TextShape">
-        <g id="id4">
-         <rect class="BoundingBox" stroke="none" fill="none" x="5351" y="137" width="4606" height="2110"/>
-         <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Chilanka" font-size="1693px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="5601" y="1502"><tspan fill="rgb(80,147,138)" stroke="none" style="white-space: pre">ngs</tspan></tspan></tspan></text>
-        </g>
+      </g>
+      <g class="TextShape">
+       <g id="id4">
+        <rect class="BoundingBox" stroke="none" fill="none" x="4851" y="337" width="4606" height="2110"/>
+        <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Chilanka" font-size="1552px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="5101" y="1601"><tspan fill="rgb(80,147,138)" stroke="none" style="white-space: pre">ngs</tspan></tspan></tspan></text>
        </g>
       </g>
       <g class="Graphic">
