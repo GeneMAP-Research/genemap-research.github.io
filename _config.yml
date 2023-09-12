@@ -78,8 +78,8 @@ callouts:
   note:
     title: Note
     color: yellow
-  hint:
-    title: Hint
+  example:
+    title: Example
     color: purple
   highlight:
     color: grey-lt
