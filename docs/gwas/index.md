@@ -4,7 +4,7 @@ title: "GWAS"
 nav_order: 3
 has_children: true
 has_toc: true
-base_url: "/genemap-resources/docs/"
+#base_url: "/genemap-resources/docs/"
 ---
 
 
