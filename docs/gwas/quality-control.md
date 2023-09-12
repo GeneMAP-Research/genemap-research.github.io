@@ -7,7 +7,7 @@ has_children: true
 has_toc: true
 ---
 
-<span align="center"><img src="../../assets/img/genemap-gwas.svg"></span>
+<p align="center"><img src="../../assets/img/genemap-gwas.svg" height="70%" width="70%"></p>
 
 
 # Quality Control

@@ -9,11 +9,14 @@ nav_order: 1
 
 # Converting Illumina IDAT to VCF/PLINK PED
 
-*Posted: November 19, 2022*
 
 <p align="center">
   <img src="../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="60%" height="60%">
 </p>
+
+
+*Posted: November 19, 2022*
+
 
 ## Content
 * * *
@@ -190,59 +193,57 @@ We will use `gtc2vcf.so` to process our Illumina IDAT files
 ***Next***, test that the version of gtc2vcf downloaded works with your installation of bcftools
 ```shell
 bcftools plugin ./gtc2vcf.so -help
+
+# WARNING: bcftools version mismatch .. bcftools at 1.16, the plugin "./gtc2vcf.so" at 1.15.1
+# 
+# About: convert Illumina GTC files containing intensity data into VCF. (version 2022-05-18 https://github.com/freeseek/gtc2vcf)
+# Usage: bcftools +gtc2vcf [options] [<A.gtc> ...]
+# 
+# Plugin options:
+#     -l, --list-tags                   list available FORMAT tags with description for VCF output
+#     -t, --tags LIST                   list of output FORMAT tags [GT,GQ,IGC,BAF,LRR,NORMX,NORMY,R,THETA,X,Y]
+#     -b, --bpm <file>                  BPM manifest file
+#     -c, --csv <file>                  CSV manifest file (can be gzip compressed)
+#     -e, --egt <file>                  EGT cluster file
+#     -f, --fasta-ref <file>            reference sequence in fasta format
+#         --set-cache-size <int>        select fasta cache size in bytes
+#         --gc-window-size <int>        window size in bp used to compute the GC content (-1 for no estimate) [200]
+#     -g, --gtcs <dir|file>             GTC genotype files from directory or list from file
+#     -i, --idat                        input IDAT files rather than GTC files
+#         --capacity <int>              number of variants to read from intensity files per I/O operation [32768]
+#         --adjust-clusters             adjust cluster centers in (Theta, R) space (requires --bpm and --egt)
+#         --use-gtc-sample-names        use sample name in GTC files rather than GTC file name
+#         --do-not-check-bpm            do not check whether BPM and GTC files match manifest file name
+#         --genome-studio <file>        input a GenomeStudio final report file (in matrix format)
+#         --no-version                  do not append version and command line to the header
+#     -o, --output <file>               write output to a file [standard output]
+#     -O, --output-type u|b|v|z|t[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF
+#                                       t: GenomeStudio tab-delimited text output, 0-9: compression level [v]
+#         --threads <int>               number of extra output compression threads [0]
+#     -x, --extra <file>                write GTC metadata to a file
+#     -v, --verbose                     print verbose information
+# 
+# Manifest options:
+#         --beadset-order               output BeadSetID normalization order (requires --bpm and --csv)
+#         --fasta-flank                 output flank sequence in FASTA format (requires --csv)
+#     -s, --sam-flank <file>            input flank sequence alignment in SAM/BAM format (requires --csv)
+#         --genome-build <assembly>     genome build ID used to update the manifest file [GRCh38]
+# 
+# Examples:
+#     bcftools +gtc2vcf -i 5434246082_R03C01_Grn.idat
+#     bcftools +gtc2vcf 5434246082_R03C01.gtc
+#     bcftools +gtc2vcf -b HumanOmni2.5-4v1_H.bpm -c HumanOmni2.5-4v1_H.csv
+#     bcftools +gtc2vcf -e HumanOmni2.5-4v1_H.egt
+#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv -e GSA-24v3-0_A1_ClusterFile.egt -f human_g1k_v37.fasta -o GSA-24v3-0_A1.vcf
+#     bcftools +gtc2vcf -c HumanOmni2.5-4v1_H.csv -f human_g1k_v37.fasta 5434246082_R03C01.gtc -o 5434246082_R03C01.vcf
+#     bcftools +gtc2vcf -f human_g1k_v37.fasta --genome-studio GenotypeReport.txt -o GenotypeReport.vcf
+# 
+# Examples of manifest file options:
+#     bcftools +gtc2vcf -b GSA-24v3-0_A1.bpm -c GSA-24v3-0_A1.csv --beadset-order
+#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --fasta-flank -o GSA-24v3-0_A1.fasta
+#     bwa mem -M GCA_000001405.15_GRCh38_no_alt_analysis_set.fna GSA-24v3-0_A1.fasta -o GSA-24v3-0_A1.sam
+#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --sam-flank GSA-24v3-0_A1.sam -o GSA-24v3-0_A1.GRCh38.csv
 ```
-
-{: .highlight }
-> # WARNING: bcftools version mismatch .. bcftools at 1.16, the plugin "./gtc2vcf.so" at 1.15.1
-> # 
-> # About: convert Illumina GTC files containing intensity data into VCF. (version 2022-05-18 https://github.com/freeseek/gtc2vcf)
-> # Usage: bcftools +gtc2vcf [options] [<A.gtc> ...]
-> # 
-> # Plugin options:
-> #     -l, --list-tags                   list available FORMAT tags with description for VCF output
-> #     -t, --tags LIST                   list of output FORMAT tags [GT,GQ,IGC,BAF,LRR,NORMX,NORMY,R,THETA,X,Y]
-> #     -b, --bpm <file>                  BPM manifest file
-> #     -c, --csv <file>                  CSV manifest file (can be gzip compressed)
-> #     -e, --egt <file>                  EGT cluster file
-> #     -f, --fasta-ref <file>            reference sequence in fasta format
-> #         --set-cache-size <int>        select fasta cache size in bytes
-> #         --gc-window-size <int>        window size in bp used to compute the GC content (-1 for no estimate) [200]
-> #     -g, --gtcs <dir|file>             GTC genotype files from directory or list from file
-> #     -i, --idat                        input IDAT files rather than GTC files
-> #         --capacity <int>              number of variants to read from intensity files per I/O operation [32768]
-> #         --adjust-clusters             adjust cluster centers in (Theta, R) space (requires --bpm and --egt)
-> #         --use-gtc-sample-names        use sample name in GTC files rather than GTC file name
-> #         --do-not-check-bpm            do not check whether BPM and GTC files match manifest file name
-> #         --genome-studio <file>        input a GenomeStudio final report file (in matrix format)
-> #         --no-version                  do not append version and command line to the header
-> #     -o, --output <file>               write output to a file [standard output]
-> #     -O, --output-type u|b|v|z|t[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF
-> #                                       t: GenomeStudio tab-delimited text output, 0-9: compression level [v]
-> #         --threads <int>               number of extra output compression threads [0]
-> #     -x, --extra <file>                write GTC metadata to a file
-> #     -v, --verbose                     print verbose information
-> # 
-> # Manifest options:
-> #         --beadset-order               output BeadSetID normalization order (requires --bpm and --csv)
-> #         --fasta-flank                 output flank sequence in FASTA format (requires --csv)
-> #     -s, --sam-flank <file>            input flank sequence alignment in SAM/BAM format (requires --csv)
-> #         --genome-build <assembly>     genome build ID used to update the manifest file [GRCh38]
-> # 
-> # Examples:
-> #     bcftools +gtc2vcf -i 5434246082_R03C01_Grn.idat
-> #     bcftools +gtc2vcf 5434246082_R03C01.gtc
-> #     bcftools +gtc2vcf -b HumanOmni2.5-4v1_H.bpm -c HumanOmni2.5-4v1_H.csv
-> #     bcftools +gtc2vcf -e HumanOmni2.5-4v1_H.egt
-> #     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv -e GSA-24v3-0_A1_ClusterFile.egt -f human_g1k_v37.fasta -o GSA-24v3-0_A1.vcf
-> #     bcftools +gtc2vcf -c HumanOmni2.5-4v1_H.csv -f human_g1k_v37.fasta 5434246082_R03C01.gtc -o 5434246082_R03C01.vcf
-> #     bcftools +gtc2vcf -f human_g1k_v37.fasta --genome-studio GenotypeReport.txt -o GenotypeReport.vcf
-> # 
-> # Examples of manifest file options:
-> #     bcftools +gtc2vcf -b GSA-24v3-0_A1.bpm -c GSA-24v3-0_A1.csv --beadset-order
-> #     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --fasta-flank -o GSA-24v3-0_A1.fasta
-> #     bwa mem -M GCA_000001405.15_GRCh38_no_alt_analysis_set.fna GSA-24v3-0_A1.fasta -o GSA-24v3-0_A1.sam
-> #     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --sam-flank GSA-24v3-0_A1.sam -o GSA-24v3-0_A1.GRCh38.csv
-
 
 Although you see that a warning is thrown that the versions of bcftools and gtc2vcf are different,
 the command works anyway.
