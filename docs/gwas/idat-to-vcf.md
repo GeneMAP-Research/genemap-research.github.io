@@ -12,7 +12,7 @@ nav_order: 1
 *Posted: November 19, 2022*
 
 <p align="center">
-  <img src="../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="40%" height="40%">
+  <img src="../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="60%" height="60%">
 </p>
 
 ## Content
