@@ -8,7 +8,7 @@ has_children: true
 
 # GeneMAP GWAS 
 
-![](../assets/img/genemap-gwas.svg)
+![](/assets/img/genemap-gwas.svg)
 
 <img src="/assets/img/genemap-gwas.svg">
 
