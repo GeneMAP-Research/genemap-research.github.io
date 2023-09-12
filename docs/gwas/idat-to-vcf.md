@@ -9,8 +9,10 @@ nav_order: 1
 <p align="center"><img src="../../assets/img/genemap-gwas-2.svg" height="50%" width="50%"></p>
 
 
-# Converting Illumina IDAT to VCF/PLINK PED
 
+
+# Converting Illumina IDAT to VCF/PLINK PED
+---
 
 <p align="center">
   <img src="../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="60%" height="60%">
