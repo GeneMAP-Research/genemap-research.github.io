@@ -5,13 +5,14 @@ parent: Resources
 nav_order: 1
 has_children: true
 has_toc: true
+base_url: "/genemap-resources/docs/"
 ---
 
 
 # GeneMAP GWAS 
 
-![]("assets/img/genemap-gwas.svg")
+![]("../assets/img/genemap-gwas.svg")
 
-<p align="center"><img src="assets/img/genemap-gwas.svg"></p>
+<p align="center"><img src="../assets/img/genemap-gwas.svg"></p>
 
-<span align="right"><img src="assets/img/genemap-gwas.svg"></span>
+<span align="right"><img src="/docs/assets/img/genemap-gwas.svg"></span>
