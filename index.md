@@ -3,6 +3,7 @@ title: Resources
 layout: default
 nav_order: 1
 has_toc: true
+has_children: true
 ---
 
 # GeneMAP Resources
