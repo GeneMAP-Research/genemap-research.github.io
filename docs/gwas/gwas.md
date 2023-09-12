@@ -4,7 +4,7 @@ title: GWAS
 parent: Resources
 nav_order: 2
 has_children: true
-logo: assets/img/genemap-gwas.svg
 ---
 
-# GeneMAP GWAS
+# GeneMAP GWAS 
+<span align="right"><img src="assets/img/genemap-gwas.svg"></span>
