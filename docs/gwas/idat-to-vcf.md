@@ -130,9 +130,9 @@ mkdir -p idat2vcf
 cd idat2vcf
 ```
 
-<p style="background-color: rgba(255, 255, 140, 0.5); margin: 25px 50px 25px; text-align: center; padding: 0.75rem; border-radius: 0.5rem;">
-   <strong><i>Note</i></strong>: I always use -p to avoid overwriting a directory if it already exists
-</p>
+{: .note }
+> I always use -p to avoid overwriting a directory if it already exists
+
 
 ***Next***, check your version of bcftools by typing bcftools
 
@@ -147,7 +147,7 @@ of bcftools.
 It will still work if your version of bcftools is higher than the version of gtc2vcf but not the other way round.
 
 <p align="center">
-  <img src="../assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
+  <img src="../../assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
 </p>
 
 
@@ -156,15 +156,16 @@ It will still work if your version of bcftools is higher than the version of gtc
 
 
 {: .example }
-> *Linux users*
+> Linux users
 > ```shell
 > wget https://software.broadinstitute.org/software/gtc2vcf/gtc2vcf_1.15.1-20220518.zip
 > ```
 >
-> *Mac users*
+> Mac users
 > ```shell
 > curl https://software.broadinstitute.org/software/gtc2vcf/gtc2vcf_1.15.1-20220518.zip --output gtc2vcf_1.15.1-20220518.zip
 > ```
+
 
 {: .important }
 > Notice that this is version 1.15.1 for bcftools version 1.15.1 or higher
