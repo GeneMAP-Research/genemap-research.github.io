@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Sample Quality Control
-parent: Quality Control
+title: "Sample Quality Control"
+parent: "Quality Control"
 nav_order: 1
 ---
 

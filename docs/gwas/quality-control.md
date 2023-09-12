@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Quality Control
+title: "Quality Control"
 parent: "GWAS"
 nav_order: 2
 has_children: true

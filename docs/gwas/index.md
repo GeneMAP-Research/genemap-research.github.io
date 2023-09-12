@@ -6,11 +6,10 @@ has_children: true
 has_toc: true
 ---
 
-
-# GWAS 
-
-![](../assets/img/genemap-gwas.svg)
-
 <p align="center"><img src="../assets/img/genemap-gwas-2.svg"></p>
 
-<span align="right"><img src="../assets/img/genemap-gwas.svg"></span>
+
+
+
+# GWAS 
+Genomw-wide association study tutotrials and workflows
