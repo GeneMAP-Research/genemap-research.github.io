@@ -17,7 +17,7 @@ nav_order: 1
 
 ----
 
-<p align="center"><a href="https://genemap-research.github.io/docs/data/datamanagement/"><img src="docs/assets/img/genemap-datamanagement-2.svg"></a></p>
+<p align="center"><a href="https://genemap-research.github.io/docs/data/data-management/"><img src="docs/assets/img/genemap-datamanagement-2.svg"></a></p>
 
 ----
 
