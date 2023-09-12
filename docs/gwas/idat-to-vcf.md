@@ -1,6 +1,6 @@
 ---
 layout: default
-title: IDAT to VCF
+title: "IDAT to VCF"
 parent: "GWAS"
 nav_order: 1
 has_children: true
@@ -32,6 +32,11 @@ has_toc: false
   - [Get a pre-compiled binary of gtc2vcf plugin for bcftools](#get-gtc)
   - [Convert Illumina IDAT files to GTC files](#idat-gtc)
   - [Convert GTC to VCF](#gtc-vcf)
+
+
+{: .important }
+> See the Nextflow workflow [here](https://genemap-research.github.io/docs/gwas/idat-to-vcf-workflow/)
+> It is useful for batch processing and efficiency
 
 
 ## Requirements
