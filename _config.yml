@@ -1,11 +1,11 @@
 remote_theme: just-the-docs/just-the-docs
-logo: assets/img/genemap-resources-logo.svg
+logo: docs/assets/img/genemap-resources-logo.svg
 #logo: assets/img/gis-logo.svg
 #logo: assets/img/esohinformatics_gitlogo.png
 #favicon_ico: assets/img/favicon.ico
 
-baseurl: "/genemap-resources/"
-url: "https://genemap-resources.com"
+#baseurl: "/genemap-resources/"
+#url: "https://genemap-resources.com"
 #repository: esohkevin/siaImputationService
 
 permalink: pretty
@@ -49,7 +49,7 @@ mermaid:
 aux_links:
   "GR on GitHub":
     - "https://github.com/GeneMAP-Research/genemap-resources"
-  "<p align=\"center\"><img src=\"assets/img/genemap-logo.png\" height=\"100%\" width=\"100%\"></p>":
+  "<span align=\"center\"><img src=\"docs/assets/img/genemap-logo.png\" height=\"100%\" width=\"100%\"></span>":
     - "https://genemap.africa/" # genemap website here
 
 # Makes Aux links open in a new tab. Default is false

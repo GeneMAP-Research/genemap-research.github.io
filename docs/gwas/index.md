@@ -7,10 +7,11 @@ has_children: true
 has_toc: true
 ---
 
+
 # GeneMAP GWAS 
 
-![]("/assets/img/genemap-gwas.svg")
+![]("assets/img/genemap-gwas.svg")
 
-<p align="center"><img src="/assets/img/genemap-gwas.svg"></p>
+<p align="center"><img src="assets/img/genemap-gwas.svg"></p>
 
-<span align="right"><img src="/assets/img/genemap-gwas.svg"></span>
+<span align="right"><img src="assets/img/genemap-gwas.svg"></span>
