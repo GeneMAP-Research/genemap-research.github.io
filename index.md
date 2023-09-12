@@ -9,19 +9,23 @@ nav_order: 1
 
 ----
 
-<p align="center"><a href="#"><img src="docs/assets/img/genemap-data.svg"></a></p>
+<p align="center"><a href="#"><img src="docs/assets/img/genemap-projects-2.svg"></a></p>
 
 ----
 
-<p align="center"><a href="#"><img src="docs/assets/img/genemap-datamanagement.svg"></a></p>
+<p align="center"><a href="#"><img src="docs/assets/img/genemap-data-2.svg"></a></p>
 
 ----
 
-<p align="center"><a href="https://genemap-research.github.io/genemapimputationservice/"><img src="docs/assets/img/genemap-imputation.svg"></a></p>
+<p align="center"><a href="#"><img src="docs/assets/img/genemap-datamanagement-2.svg"></a></p>
 
 ----
 
 <p align="center"><a href="#"><img src="docs/assets/img/genemap-gwas-2.svg"></a></p>
+
+----
+
+<p align="center"><a href="#"><img src="docs/assets/img/genemap-imputation-2.svg"></a></p>
 
 ----
 
