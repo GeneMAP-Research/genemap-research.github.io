@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Data Management
+parent: Data
 nav_order: 3
 has_toc: true
 has_children: false
