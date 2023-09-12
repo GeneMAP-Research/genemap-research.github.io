@@ -2,6 +2,7 @@
 layout: default
 title: "Sample Quality Control"
 parent: "Quality Control"
+grand_parent: "GWAS"
 nav_order: 1
 ---
 
