@@ -13,6 +13,6 @@ base_url: "/genemap-resources/docs/"
 
 ![](../assets/img/genemap-gwas.svg)
 
-<p align="center"><img src="/assets/img/genemap-gwas.svg"></p>
+<p align="center"><img src="../assets/img/genemap-gwas.svg"></p>
 
 <span align="right"><img src="../assets/img/genemap-gwas.svg"></span>
