@@ -1,9 +1,10 @@
 ---
 layout: default
-title: "IDAT to VCF"
+title: IDAT to VCF
 parent: "GWAS"
 nav_order: 1
-#has_toc: true
+has_children: true
+has_toc: false
 ---
 
 <p align="center"><img src="../../assets/img/genemap-gwas-2.svg" height="50%" width="50%"></p>
