@@ -12,13 +12,14 @@ nav_order: 1
 *Posted: November 19, 2022*
 
 <p align="center">
-  <img src="docs/assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="90%">
+  <img src="../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="40%" height="40%">
 </p>
 
 ## Content
 * * *
-1. [Requirements](#requirements)
-2. [Step-by-Step procedure](#procedure)
+- [Requirements](#requirements)
+- [Step-by-Step procedure](#procedure)
+  - [Download iaap-cli](#download-iaap)
 
 
 ## Requirements
@@ -35,7 +36,7 @@ nav_order: 1
 
 ## Step-by-step procedure <a name="procedure"></a>
 * * *
-### Download iaap-cli
+### Download iaap-cli <a name="download-iaap"></a>
 
 - This can be downloaded from [here](https://emea.support.illumina.com/downloads/iaap-genotyping-cli.html){:target="_blank"}
 
@@ -142,7 +143,7 @@ of bcftools.
 It will still work if your version of bcftools is higher than the version of gtc2vcf but not the other way round.
 
 <p align="center">
-  <img src="docs/assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
+  <img src="../assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
 </p>
 
 
