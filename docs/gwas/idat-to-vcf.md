@@ -6,6 +6,8 @@ nav_order: 1
 #has_toc: true
 ---
 
+<p align="center"><img src="../../assets/img/genemap-gwas-2.svg" height="50%" width="50%"></p>
+
 
 # Converting Illumina IDAT to VCF/PLINK PED
 
@@ -47,7 +49,10 @@ nav_order: 1
 
 - This can be downloaded from [here](https://emea.support.illumina.com/downloads/iaap-genotyping-cli.html){:target="_blank"}
 
-  **Note** You need to create an account, and then you can download it freely.
+  
+{: .highlight }
+> You need to create an account, and then you can download it freely.
+
 
 - Alternatively, you can run the code below. This was adapted from the [gtc2vcf github page](https://github.com/freeseek/gtc2vcf){:target="_blank"}
 
@@ -170,7 +175,7 @@ It will still work if your version of bcftools is higher than the version of gtc
 > ```
 
 
-{: .important }
+{: .note }
 > Notice that this is version 1.15.1 for bcftools version 1.15.1 or higher
 
 
@@ -278,7 +283,6 @@ the absoulte path is called multiple times.*
 
 ### Convert Illumina IDAT files to GTC files <a name="idat-gtc"></a>
 ```shell
-
 bpm_manifest_file=""
 egt_cluster_file=""
 path_to_idat_folder=""

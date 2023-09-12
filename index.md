@@ -21,7 +21,7 @@ nav_order: 1
 
 ----
 
-<p align="center"><a href="#"><img src="docs/assets/img/genemap-gwas.svg"></a></p>
+<p align="center"><a href="#"><img src="docs/assets/img/genemap-gwas-2.svg"></a></p>
 
 ----
 

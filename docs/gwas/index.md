@@ -11,6 +11,6 @@ has_toc: true
 
 ![](../assets/img/genemap-gwas.svg)
 
-<p align="center"><img src="../assets/img/genemap-gwas.svg"></p>
+<p align="center"><img src="../assets/img/genemap-gwas-2.svg"></p>
 
 <span align="right"><img src="../assets/img/genemap-gwas.svg"></span>
