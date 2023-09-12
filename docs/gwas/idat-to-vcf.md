@@ -34,8 +34,9 @@ has_toc: false
   - [Convert GTC to VCF](#gtc-vcf)
 
 
+
 {: .important }
-> See the Nextflow workflow [here](https://genemap-research.github.io/docs/gwas/idat-to-vcf-workflow/)
+> See the Nextflow workflow [here](https://genemap-research.github.io/docs/gwas/idat-to-vcf-workflow/).
 > It is useful for batch processing and efficiency
 
 
