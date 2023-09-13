@@ -8,7 +8,7 @@ has_children: false
 has_toc: false
 ---
 
-<p align="center"><img src="../../../assets/img/genemap-tutorial.svg" height="50%" width="50%"></p>
+<p align="center"><img src="../../../assets/img/genemap-tutorials.svg" height="50%" width="50%"></p>
 
 
 
