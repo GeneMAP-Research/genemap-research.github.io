@@ -17,7 +17,7 @@ has_toc: false
 ---
 
 <p align="center">
-  <img src="../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="60%" height="60%">
+  <img src="../../../assets/img/gtc2vcf_flow_diagram.png" alt="F&C coffee cups" width="60%" height="60%">
 </p>
 
 
@@ -165,7 +165,7 @@ of bcftools.
 It will still work if your version of bcftools is higher than the version of gtc2vcf but not the other way round.
 
 <p align="center">
-  <img src="../../assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
+  <img src="../../../assets/img/gtc2vcf-website.png" alt="https://software.broadinstitute.org/software/gtc2vcf/" width="75%">
 </p>
 
 

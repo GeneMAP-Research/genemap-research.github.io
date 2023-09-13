@@ -6,7 +6,7 @@ has_toc: true
 has_children: true
 ---
 
-<p align="center"><img src="../assets/img/genemap-projects-2.svg" height="50%" width="50%"></p>
+<p align="center"><img src="../../assets/img/genemap-projects.svg" height="50%" width="50%"></p>
 
 
 
