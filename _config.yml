@@ -10,7 +10,7 @@ logo: docs/assets/img/genemap-resources.svg
 
 permalink: pretty
 
-color_scheme: "dark"
+color_scheme: "light"
 
 # Enable or disable the site search
 # Supports true (default) or false
