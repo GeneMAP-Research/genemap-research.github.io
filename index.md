@@ -25,9 +25,12 @@ nav_order: 1
 
 ----
 
-<p align="center"><a href=""><img src="docs/assets/img/genemap-imputation.svg"></a></p>
+<p align="center"><a href="https://genemap-research.github.io/docs/workflows/imputation/"><img src="docs/assets/img/genemap-imputation.svg"></a></p>
 
 ----
 
-<p align="center"><a href="#"><img src="docs/assets/img/genemap-ngs.svg"></a></p>
+<p align="center"><a href="https://genemap-research.github.io/docs/workflows/ngs/"><img src="docs/assets/img/genemap-ngs.svg"></a></p>
 
+----
+
+<p align="center"><a href="https://genemap-research.github.io/docs/tutorials/"><img src="docs/assets/img/genemap-tutorials.svg"></a></p>
