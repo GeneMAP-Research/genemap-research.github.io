@@ -1,13 +1,14 @@
 ---
 layout: default
-title: "IDAT to VCF"
-parent: "GWAS"
+title: IDAT to VCF
+parent: gwas
+grand_parent: Tutorials
 nav_order: 1
-has_children: true
+has_children: false
 has_toc: false
 ---
 
-<p align="center"><img src="../../assets/img/genemap-gwas-2.svg" height="50%" width="50%"></p>
+<p align="center"><img src="../../assets/img/genemap-tutorial.svg" height="50%" width="50%"></p>
 
 
 
@@ -36,7 +37,7 @@ has_toc: false
 
 
 {: .important }
-> See the Nextflow workflow [here](https://genemap-research.github.io/docs/gwas/idat-to-vcf-workflow/).
+> See the Nextflow workflow [here](https://genemap-research.github.io/docs/workflows/gwas/idat-to-vcf/).
 > It is useful for batch processing and efficiency
 
 

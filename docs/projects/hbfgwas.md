@@ -5,7 +5,7 @@ parent: Projects
 nav_order: 1
 ---
 
-<p align="center"><img src="../../assets/img/genemap-projects-2.svg" height="50%" width="50%"></p>
+<p align="center"><img src="../../assets/img/genemap-projects.svg" height="50%" width="50%"></p>
 
 
 
