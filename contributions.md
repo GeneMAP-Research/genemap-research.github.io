@@ -5,8 +5,21 @@ nav_order: 6
 ---
 
 # Contributions
+---
 
-GeneMAP Resources is developed and maintained by [Kevin Esoh](https://github.com/esohkevin)
+[GeneMAP Resources](https://genemap-research.github.io/) is developed and maintained by [Kevin Esoh](https://github.com/esohkevin)
+
+
+# Acknowledgements
+---
+
+[UCT HPC](#): 
+
+[CHPC](#): 
+
+Funders:
+  - [...](#)
 
 
 # Contact
+---
