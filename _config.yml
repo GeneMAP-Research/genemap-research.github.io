@@ -1,5 +1,5 @@
 remote_theme: just-the-docs/just-the-docs
-logo: docs/assets/img/genemap-resources-logo-2.svg
+logo: docs/assets/img/genemap-resources-logo.svg
 #logo: assets/img/gis-logo.svg
 #logo: assets/img/esohinformatics_gitlogo.png
 #favicon_ico: assets/img/favicon.ico
@@ -10,7 +10,7 @@ logo: docs/assets/img/genemap-resources-logo-2.svg
 
 permalink: pretty
 
-color_scheme: "light"
+color_scheme: "dark"
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -47,8 +47,10 @@ mermaid:
 
 # Aux links for the upper right navigation
 aux_links:
-  "GR on GitHub":
+  "<span align=\"center\"><img src=\"/docs/assets/img/gr-on-github.svg\" height=\"50%\" width=\"50%\"></span>":
     - "https://github.com/GeneMAP-Research/genemap-research.github.io"
+#  "GR on GitHub":
+#    - "https://github.com/GeneMAP-Research/genemap-research.github.io"
   "<span align=\"center\"><img src=\"/docs/assets/img/genemap-logo.png\" height=\"100%\" width=\"100%\"></span>":
     - "https://genemap.africa/" # genemap website here
 
