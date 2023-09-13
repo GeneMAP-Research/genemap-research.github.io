@@ -7,12 +7,13 @@ nav_order: 1
 
 <p align="center"><img src="../../assets/img/genemap-projects.svg" height="50%" width="50%"></p>
 
-
+---
 
 # Fetal Hemoglobin Genome-wide Association Study <a name="top"></a> 
 
 Genome-wide association study of fetal hemoglobin (HbF) in Cameroon, Tanzania, and African American Sickle Cell Anemia patients
 
+---
 
 # Contents
 - [Load r package](#load-r)

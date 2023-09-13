@@ -11,8 +11,7 @@ has_toc: false
 <p align="center"><img src="../../../assets/img/genemap-tutorials.svg" height="50%" width="50%"></p>
 
 
-
-
 # Quality Control
+---
 
-GWAS quality control
+_under development_

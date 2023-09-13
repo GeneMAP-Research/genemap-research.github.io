@@ -8,7 +8,6 @@ has_children: true
 
 <p align="center"><img src="../assets/img/genemap-projects.svg" height="50%" width="50%"></p>
 
+---
 
-
-
-# Projects
+_under development_

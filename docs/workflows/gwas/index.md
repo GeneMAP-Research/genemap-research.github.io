@@ -9,8 +9,12 @@ has_toc: true
 
 <p align="center"><img src="../../assets/img/genemap-gwas.svg" height="50%" width="50%"></p>
 
+---
 
+# Contents
+- [Installation](#)
+  - [Test installation](#)
 
+---
 
-# GWAS 
-Genome-wide association study workflows
+_under development_

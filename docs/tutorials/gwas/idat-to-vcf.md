@@ -11,8 +11,6 @@ has_toc: false
 <p align="center"><img src="../../../assets/img/genemap-tutorials.svg" height="50%" width="50%"></p>
 
 
-
-
 # Converting Illumina IDAT to VCF/PLINK PED
 ---
 
@@ -24,8 +22,7 @@ has_toc: false
 *Posted: November 19, 2022*
 
 
-## Content
-* * *
+# Contents
 - [Requirements](#requirements)
 - [Step-by-Step procedure](#procedure)
   - [Download iaap-cli](#download-iaap)
