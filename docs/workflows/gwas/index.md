@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GWAS"
+title: gwas
 nav_order: 4
 has_children: true
 has_toc: true
