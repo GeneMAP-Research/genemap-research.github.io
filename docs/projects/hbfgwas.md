@@ -189,6 +189,9 @@ cm %>% select(Haplotypes) %>% table()   # HBB gene cluster haplotypes
 Atypical/Atypical*
 
 
+[Back to top](#top)
+
+
 # Tanzania data variables <a name="tz-data-var"></a>
 
 ```r
