@@ -1,6 +1,6 @@
 ---
 layout: default
-title: IDAT to VCF
+title: Convert IDAT to VCF
 parent: gwas
 grand_parent: Tutorials
 nav_order: 1
