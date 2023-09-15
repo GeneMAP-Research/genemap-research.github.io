@@ -14,7 +14,6 @@ nav_order: 1
 ---
 
 # Contents
----
 - [Requirements](#req)
 - [Installation](#install)
 - [Edit the configuration file](#config)
@@ -26,14 +25,17 @@ nav_order: 1
 
 # Requirements <a name="req"></a>
 - [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html#installation)
+	
 	Check that nextflow is installed on your cluster and load it.
 
 {: .note-title }
-> Preferred version: 
+> Preferred version:
+>
 > 21.10 or greater
 
 
 - [Singularity](https://apptainer.org/docs/user/latest/quick_start.html#quick-installation)
+	
 	Singularity has now been changed to Apptainer, but most clusters to run it as singularity.
 	We'll need singularity to pull the `gencall` docker container from our dockerhub account as
 	a singularity image file.
@@ -41,14 +43,14 @@ nav_order: 1
 	Check if singularity is installed on your cluster and load it.
 
 {: .note-title }
-> Preferred version: 
+> Preferred version:
+>
 > 3.5 or greater
 
+---
 
 
 # Installation <a name="install"></a>
----
-
 Navigate to the path where you would like to run the workflow from and run the code below.
 
 ```sh
@@ -59,10 +61,10 @@ tar zxvf v0.3.tar.gz
 cd genemapgwas-0.3/illumina/
 ```
 
-
-# Edit the Configuration file <a name="config"></a>
 ---
 
+
+# Edit the Configuration file <a name="config"></a>
 In the `illumina` folder is a master configuration file '`nextflow.config`' where all your input options will be specified.
 
 Only edit the lines displayed below.
