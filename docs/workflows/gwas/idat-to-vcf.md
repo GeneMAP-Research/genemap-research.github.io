@@ -203,7 +203,7 @@ nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <w
 {: .important .fs-3 }
 > Nextflow can generate many large intermediate files. So it is important to specify an appropriate work directory with the `-w` option.
 >
-> Nextflow needs these intermediates files to resume your job in case the workflow terminates without completing. So only delete the work directory when you are sure your workflow is complete and you are satisfied with all the outputs. Else, rerunning it will start from scratch.
+> Nextflow needs these intermediate files to resume your job in case the workflow terminates without completing. So only delete the work directory when you are sure your workflow is complete and you are satisfied with all the outputs. Else, rerunning it will start from scratch.
 
 
 [Back to top](#top)
