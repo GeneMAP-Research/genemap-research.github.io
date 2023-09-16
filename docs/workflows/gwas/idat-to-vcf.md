@@ -42,40 +42,39 @@ In the `illumina` folder is a master configuration file '`nextflow.config`' wher
 
 Only edit the lines displayed below.
 
-```
-params {
-
-  // data-related parameters
-  idat_dir          = ""
-  manifest_bpm      = ""
-  manifest_csv      = ""
-  cluster_file      = ""
-  fasta_ref         = ""
-  bam_alignment     = ""                          // if processing in build 38 (hg38), provide a bam alignment file
-  output_prefix     = ""
-  output_dir        = ""
-
-
-  // computing resource-related parameters
-  account           = ""                          // if using SLURM or PBSPRO, provide your cluster project or account name
-  partition         = ""                          // if using SLURM or PBSPRO, specify the queue or partition name
-  njobs             = 5                           // number of jobs to submit at once each time
-  containers_dir    = ""                          // if using singularity containers, provide a path where the images will be stored.
-                                                  // NB: The path should have sufficient storage capacity
-
-
-  // IDAT to GTC: requires less resources
-  idat_threads      = 4                           // number of cpus/threads per job
-  idat_max_time     = 1.h                         // maximum time each job is allowed to run (h - hours; m - minutes)
-  idat_max_memory   = 2.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
-
-
-  // GTC to VCF: requires more resources
-  gtc_threads       = 10                           // number of cpus/threads per job
-  gtc_max_time      = 3.h                         // maximum time each job is allowed to run (h - hours; m - minutes)
-  gtc_max_memory    = 3.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
-}
-```
+{: .highlight .fs-1 }
+> params {
+> 
+>   // data-related parameters
+>   idat_dir          = ""
+>   manifest_bpm      = ""
+>   manifest_csv      = ""
+>   cluster_file      = ""
+>   fasta_ref         = ""
+>   bam_alignment     = ""                          // if processing in build 38 (hg38), provide a bam alignment file
+>   output_prefix     = ""
+>   output_dir        = ""
+> 
+> 
+>   // computing resource-related parameters
+>   account           = ""                          // if using SLURM or PBSPRO, provide your cluster project or account name
+>   partition         = ""                          // if using SLURM or PBSPRO, specify the queue or partition name
+>   njobs             = 5                           // number of jobs to submit at once each time
+>   containers_dir    = ""                          // if using singularity containers, provide a path where the images will be stored.
+>                                                   // NB: The path should have sufficient storage capacity
+> 
+> 
+>   // IDAT to GTC: requires less resources
+>   idat_threads      = 4                           // number of cpus/threads per job
+>   idat_max_time     = 1.h                         // maximum time each job is allowed to run (h - hours; m - minutes)
+>   idat_max_memory   = 2.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
+> 
+> 
+>   // GTC to VCF: requires more resources
+>   gtc_threads       = 10                           // number of cpus/threads per job
+>   gtc_max_time      = 3.h                         // maximum time each job is allowed to run (h - hours; m - minutes)
+>   gtc_max_memory    = 3.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
+> }
 
 
 ## Config parameters <a name="parameters"></a>
@@ -103,6 +102,9 @@ Let's go through each parameter one after the other
 │   └── 748974817
 
 ```
+{: fs-2 }
+
+
 ---
 
 `manifest_bpm`, `manifest_csv` and `cluster_file`:
@@ -220,37 +222,38 @@ NB: For the test, we add a test profile before the three categories we mentioned
 
 
 If all goes well, you should see a message like this
-```
-N E X T F L O W  ~  version 21.10.6
-Launching `test.nf` [jolly_jennings] - revision: c99dfcf444
 
-        IDAT to VCF: TEST
+{: .highlight .fs-1 }
+> N E X T F L O W  ~  version 21.10.6
+> Launching `test.nf` [jolly_jennings] - revision: c99dfcf444
+> 
+>         IDAT to VCF: TEST
+> 
+> idat_dir        = YOUR IDAT PARENT DIRECTORY
+> manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
+> manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
+> cluster_file    = YOUR CLUSTER FILE
+> fasta_ref      = HUMAN REFERENCE FASTA
+> output_prefix   = YOUR OUTPUT FILE NAME PREFIX
+> output_dir      = PATH WHERE YOUR OUTPUT IS STORED
+> containers_dir  = PATH WHERE CONTAINERS ARE STORED
+> account         = humgen        # CHANGE TO YOURS
+> partition       = sadacc-short      # CHANGE TO YOURS
+> 
+> executor >  local (1)
+> [5f/ddaf29] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
+> PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
+> (C) 2005-2023 Shaun Purcell, Christopher Chang   GNU General Public License v3
+> 
+> --pedmap <prefix>  : Specify .ped + .map filename prefix.
+> --ped <filename>   : Specify full name of .ped file.
+> --map <filename>   : Specify full name of .map file.
+> 
+> Workflow completed at: 2023-09-16T13:35:26.858+02:00
+>      Execution status: OK
 
-idat_dir        = YOUR IDAT PARENT DIRECTORY
-manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
-manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
-cluster_file    = YOUR CLUSTER FILE
-fasta_ref      = HUMAN REFERENCE FASTA
-output_prefix   = YOUR OUTPUT FILE NAME PREFIX
-output_dir      = PATH WHERE YOUR OUTPUT IS STORED
-containers_dir  = PATH WHERE CONTAINERS ARE STORED
-account         = humgen        # CHANGE TO YOURS
-partition       = sadacc-short      # CHANGE TO YOURS
 
-executor >  local (1)
-[5f/ddaf29] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
-PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
-(C) 2005-2023 Shaun Purcell, Christopher Chang   GNU General Public License v3
-
---pedmap <prefix>  : Specify .ped + .map filename prefix.
---ped <filename>   : Specify full name of .ped file.
---map <filename>   : Specify full name of .map file.
-
-Workflow completed at: 2023-09-16T13:35:26.858+02:00
-     Execution status: OK
-```
-
-{: .note }
+{: .note .fs-2 }
 > You might see a few warnings:
 > - regarding `echo` and `debug`. These are caused by different versions of nextflow and do not pose any issues.
 > - regarding singularity cache directory. As long as you set a value for `containers_dir` in your `nextflow.config` file, it should be no problem.
@@ -315,7 +318,7 @@ You can put these in you job submission script. See below.
 
 
 
-{: .important }
+{: .important .fs-2 }
 > If submittng your job to a workload manager like slurm, you must specify your account and partition in the `nextflow.config` file.
 > 
 > But if you already requested an interactive job, then either select a local executor or do not select an executor at all.
@@ -335,7 +338,7 @@ module load software/plink-2.00a
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
 
-{: .highlight }
+{: .highlight .fs-2 }
 > In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
 >
 > This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
@@ -344,7 +347,7 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 
 
 
-{: .highlight .fs-1 }
+{: .highlight .fs-2 }
 > Test Font size 1
 
 _under development_
