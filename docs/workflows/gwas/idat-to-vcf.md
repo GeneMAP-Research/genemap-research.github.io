@@ -196,6 +196,7 @@ nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <w
 
 
 ## Test <a name="test"></a>
+---
 Let's see an example. This example will pull and use a plink2 image (which is light-weight) using singularity.
 
 
@@ -207,9 +208,9 @@ Let's see an example. This example will pull and use a plink2 image (which is li
 >    
 > `module load singularity`
 
+---
 
 ### Running with all three profile categories
----
 ```sh
 nextflow run test.nf -profile test,local,singularity,hg19 -w "./work/"
 ```
@@ -256,10 +257,9 @@ Workflow completed at: 2023-09-16T12:30:09.175+02:00
 >
 > If the containers directory is not set, the workflow will create one in your work directory.
 
-
-
-### Running without the executor profile category
 ---
+
+### Running without selecting an executor
 ```sh
 nextflow run test.nf -profile test,singularity,hg19 -w "./work/"
 ```
@@ -270,7 +270,7 @@ The output should be similar as above. However this time, the plink2 image will 
 
 
 
-### Running on a cluster without the container profile category
+### Running on a cluster without selecting a container
 ```sh
 # first load plink2 on your cluster
 
@@ -283,17 +283,33 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 You can put these in you job submission script as below.
 
 
-Example on the UCT HPC cluster
+{: .important }
+> If submittng your job to a workload manager like slurm, you must specify your account and partition in the `nextflow.config` file.
+> 
+> But if you already requested an interactive job, then either select a local executor or do not select an executor at all.
+
+
+Example on the UCT HPC cluster: `test.sbatch`
 ```
-#!usr/bin/env bash
+#!/usr/bin/env bash
 #SBATCH --account humgen
-#SBATCH --partition ada
+#SBATCH --partition sadacc-short
 #SBATCH --nodes 1
+#SBATCH --time 06:00:00
 #SBATCH --ntasks 1
 
 module load software/plink-2.00a
 
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
+
+{: .note }
+> In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
+>
+> This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
+>
+> However, we have set enough time (in HH:MM:SS - one more than the maximum time requested in the config file) to avoid premature termination of the jobs.
+
+
 
 _under development_
