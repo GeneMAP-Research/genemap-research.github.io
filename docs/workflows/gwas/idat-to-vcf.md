@@ -80,7 +80,27 @@ params {
 
 ---
 
+## Config parameters
+Let's go through each parameter 
+
+`idat_dir`:
+  - The illumina gencall algorithm needs you to provide a folder that contains pairs of gren and red idat files.
+  - You many have multiple folders, each containing a different number of idat pairs.
+  - 
 
 
+```
+.
+├── intensities
+│             ├── 034928383
+│   │   ├── file1.grn.idat
+│   │   ├── file1.red.idat
+│   │   ├── file2.grn.idat
+│   │   └── file2.red.idat
+│   ├── 236572634
+│   ├── 562525763
+│   └── 748974817
+
+```
 
 _under development_
