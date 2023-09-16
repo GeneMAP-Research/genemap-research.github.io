@@ -213,7 +213,44 @@ Let's see an example. This example will pull and use a plink2 image (which is li
 nextflow run test.nf -profile test,local,singularity,hg19 -w "./work/"
 ```
 
-- NB: For the test, we add a test profile before the three categories we mentioned above.
+NB: For the test, we add a test profile before the three categories we mentioned above.
+
+If all goes well, you should see a message like this
+```
+N E X T F L O W  ~  version 21.10.6
+Launching `test.nf` [angry_spence] - revision: 08133c0e8a
+
+        IDAT to VCF: TEST
+
+idat_dir        = YOUR IDAT PARENT DIRECTORY
+manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
+manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
+cluster_file    = YOUR CLUSTER FILE
+fasta_ref     = HUMAN REFERENCE FASTA
+output_prefix   = YOUR OUTPUT FILE NAME PREFIX
+output_dir      = PATH WHERE YOUR OUTPUT IS STORED
+account         = YOUR CLUSTER ACCOUNT/PROJECT NAME
+partition       = YOUR CLUSTER QUEUE/PARTITION
+containers_dir  = PATH WHERE CONTAINERS ARE STORED
+
+executor >  local (1)
+[47/4c3d71] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
+PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
+(C) 2005-2023 Shaun Purcell, Christopher Chang   GNU General Public License v3
+
+--pedmap <prefix>  : Specify .ped + .map filename prefix.
+--ped <filename>   : Specify full name of .ped file.
+--map <filename>   : Specify full name of .map file.
+
+Workflow completed at: 2023-09-16T12:30:09.175+02:00
+     Execution status: OK
+```
+
+{: .note }
+> You might see a few warnings:
+> - regarding `echo` and `debug`. These are cause by different versions of nextflow and do not pose any issues.
+> - regarding singularity cache directory. As long as you set one in your `nextflow.config` file, it should be no problem.
+
 
 
 ### Running without the executor profile category
@@ -222,6 +259,7 @@ nextflow run test.nf -profile test,singularity,hg19 -w "./work/"
 ```
 
 - The local executor will be used by default
+
 
 
 ### Running on a cluster without the container profile category

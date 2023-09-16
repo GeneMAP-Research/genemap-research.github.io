@@ -53,11 +53,8 @@ Navigate to the path where you would like to run the workflow from and run the c
 
 ```sh
 wget https://github.com/GeneMAP-Research/genemapgwas/archive/refs/tags/v0.1.tar.gz
-
 tar zxvf v0.1.tar.gz
-
 rm v0.1.tar.gz
-
 cd genemapgwas-0.1
 ```
 
