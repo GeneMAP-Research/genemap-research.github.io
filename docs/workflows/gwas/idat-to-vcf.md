@@ -19,7 +19,7 @@ nav_order: 1
   - [Config parameters](#parameters)
 - [Running the workflow](#run)
   - [Test](#test)
-
+  - [Run the workflow with your project](#project)
 
 ---
 
@@ -392,7 +392,7 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 
 ---
 
-# Run the workflow with you project
+## Run the workflow with your project <a name="project"></a>
 ---
 
 {: .important .fs-3 }
@@ -401,7 +401,7 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 > - Singularity appears to be the best options since docker and apptainer might not be available, and we might not be able to install iaap-cli on the cluster.
 
 
-## Locally on a compute node (interactive job)
+### Locally on a compute node (interactive job)
 - You have requested an interactive job on your cluster with minimal resources. 
 - So you still need nextflow to submit each job requesting the resources you specified in the config file.
 
@@ -418,7 +418,8 @@ nextflow run idat2vcf.nf -profile local,singularity,hg38 -w "./work/"
 ```
 
 
-
+### Submit as a job on a cluster
+Place the first command above in your sbatch job submission script and submit on your cluster.
 
 
 
