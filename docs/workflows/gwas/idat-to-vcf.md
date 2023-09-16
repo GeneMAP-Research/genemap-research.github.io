@@ -324,7 +324,7 @@ You can put these in you job submission script. See below.
 {: .important .fs-3 }
 > If submittng your job to a workload manager like slurm, you must specify your account and partition in the `nextflow.config` file.
 > 
-> But if you already requested an interactive job, then either select a local executor or do not select an executor at all.
+> But if you already requested an interactive job with enough respurces as what you specified in your config file, then either select a local executor or do not select an executor at all.
 
 
 Example on the UCT HPC cluster: `test.sbatch`
@@ -350,17 +350,72 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 > We have also set small time (5mins - in HH:MM:SS) because this is a test. When running the actual jobs, it is best to set enough time (more than the maximum time requested in the config file) to avoid premature termination of the jobs.
 
 
+### Using the hg38 reference
+command:
+```sh
+nextflow run test.nf -profile test,slurm,hg38 -w "./work/"
+```
 
 
+output:
+```
+N E X T F L O W  ~  version 21.10.6
+Launching `test.nf` [loving_elion] - revision: c99dfcf444
+
+        IDAT to VCF: TEST
+
+idat_dir        = YOUR IDAT PARENT DIRECTORY
+manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
+manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
+cluster_file    = YOUR CLUSTER FILE
+fasta_ref     = HUMAN REFERENCE FASTA
+bam_alignment = BAM ALGINMENT FOR YOU REFERENCE IN hg38
+output_prefix   = YOUR OUTPUT FILE NAME PREFIX
+output_dir      = PATH WHERE YOUR OUTPUT IS STORED
+containers_dir  = PATH WHERE CONTAINERS ARE STORED
+account         = humgen        # CHANGE TO YOURS
+partition       = sadacc-short      # CHANGE TO YOURS
+
+executor >  slurm (1)
+[49/98b7fe] process > plink (processing ... YOUR ... [100%] 1 of 1 ✔
+PLINK v2.00a3.6LM AVX2 Intel (14 Aug 2022)     www.cog-genomics.org/plink/2.0/
+(C) 2005-2022 Shaun Purcell, Christopher Chang   GNU General Public License v3
+
+--pedmap <prefix>  : Specify .ped + .map filename prefix.
+--ped <filename>   : Specify full name of .ped file.
+--map <filename>   : Specify full name of .map file.
+
+Workflow completed at: 2023-09-16T14:19:53.277+02:00
+     Execution status: OK
+```
+{: .fs-3 .lh-tight }
+
+---
+
+# Run the workflow with you project
+---
+
+{: .important .fs-3 }
+> - Make sure you have provided all necessary parameter values in the `nextflow.config` file.
+>
+> - Singularity appears to be the best options since docker and apptainer might not be available, and we might not be able to install iaap-cli on the cluster.
 
 
+## Locally on a compute node (interactive job)
+- You have requested an interactive job on your cluster with minimal resources. 
+- So you still need nextflow to submit each job requesting the resources you specified in the config file.
+
+```sh
+nextflow run idat2vcf.nf -profile slurm,singularity,hg38 -w "./work/"
+```
 
 
+- You have requested an interactive job on your cluster with enough resources. 
+- So nextflow will request resources be split from what you were already allocated.
 
-
-
-
-
+```sh
+nextflow run idat2vcf.nf -profile local,singularity,hg38 -w "./work/"
+```
 
 
 
