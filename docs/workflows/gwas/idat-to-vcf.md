@@ -10,7 +10,7 @@ nav_order: 1
 
 ---
 
-# Convert Illumina IDAT files to VCF/PED
+# Convert Illumina IDAT files to VCF/PED <a name="top"></a>
 ---
 
 # Contents
@@ -195,6 +195,9 @@ nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <w
 > Nextflow can generate many large intermediate files. So it is important to specify an appropriate work directory with the `-w` option.
 >
 > Nextflow needs these intermediates files to resume your job in case the workflow terminates without completing. So only delete the work directory when you are sure your workflow is complete and you are satisfied with all the outputs. Else, rerunning it will start from scratch.
+
+
+[Back to top](#top)
 
 
 ## Test <a name="test"></a>
@@ -392,6 +395,10 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 
 ---
 
+
+[Back to top](#top)
+
+
 ## Run the workflow with your project <a name="project"></a>
 ---
 
@@ -406,7 +413,7 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 - So you still need nextflow to submit each job requesting the resources you specified in the config file.
 
 ```sh
-nextflow run idat2vcf.nf -profile slurm,singularity,hg38 -w "./work/"
+nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w "./work/"
 ```
 
 
@@ -414,7 +421,7 @@ nextflow run idat2vcf.nf -profile slurm,singularity,hg38 -w "./work/"
 - So nextflow will request resources be split from what you were already allocated.
 
 ```sh
-nextflow run idat2vcf.nf -profile local,singularity,hg38 -w "./work/"
+nextflow run idat2vcf.nf -profile local,singularity,hg19 -w "./work/"
 ```
 
 
@@ -422,8 +429,24 @@ nextflow run idat2vcf.nf -profile local,singularity,hg38 -w "./work/"
 Place the first command above in your sbatch job submission script and submit on your cluster.
 
 
+Examples:
+```
+#!/usr/bin/env bash
+#SBATCH --account humgen
+#SBATCH --partition sadacc-short
+#SBATCH --nodes 1
+#SBATCH --time 06:00:00
+#SBATCH --ntasks 1
+
+nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w /scratch/eshkev001/projects/gwas/work/
+```
+{: .fs-3 .lh-tight }
 
 
+{: .note .fs-3 .lh-tight }
+> - The time has been increased to accommodate the project.
+>
+> - The work directory has been changed to a location with enough storage capacity.
 
 
-_under development_
+[Back to top](#top)
