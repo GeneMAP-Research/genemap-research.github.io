@@ -90,19 +90,19 @@ Let's go through each parameter one after the other
   - The workflow will grab all the sub-folders containing the idat files and pass them to genecall, hence enabling batch processing.
 
 
-```
-.
-├── intensities
-│   ├── 034928383
-│   │   ├── file1.grn.idat
-│   │   ├── file1.red.idat
-│   │   ├── file2.grn.idat
-│   │   └── file2.red.idat
-│   ├── 236572634
-│   ├── 562525763
-│   └── 748974817
-```
-{: .fs-3 }
+{: .example .fs-3 .lh-tight }
+> ```
+> .
+> ├── intensities
+> │   ├── 034928383
+> │   │   ├── file1.grn.idat
+> │   │   ├── file1.red.idat
+> │   │   ├── file2.grn.idat
+> │   │   └── file2.red.idat
+> │   ├── 236572634
+> │   ├── 562525763
+> │   └── 748974817
+> ```
 
 
 ---
@@ -178,20 +178,15 @@ There are three profile categories in the workflow:
   - local: this can be used anywhere; your computer (laptop) or any cluster (slurm, pbspro, etc). 
   - slurm: cluster running a slurm job workload manager/scheduler.
   - pbspro: cluster running a pbspro job workload manager/scheduler.
-
 <br>
-
 - **containers**: there are three containers
   - apptainer: formerly singularity. Some clusters might still not run it
   - singularity: now apptainer, Some clusters might still run it (actually most systems still do).
   - docker: Most clusters do not run docker for security reasons. It can be used on local computers.
-
 <br>
-
 - **references**: there are two references
   - hg19: this requires only the fasta file be specified.
   - hg38: this requires a fasta and a bam alignment file (see above).
-
 <br>
 
 The workflow commandline is built as follows.
@@ -339,20 +334,20 @@ You can put these in you job submission script. See below.
 > - But if you already requested an interactive job with enough respurces as what you specified in your config file, then either select a local executor or do not select an executor at all.
 
 
-Example on the UCT HPC cluster: `test.sbatch`
-```
-#!/usr/bin/env bash
-#SBATCH --account humgen
-#SBATCH --partition sadacc-short
-#SBATCH --nodes 1
-#SBATCH --time 00:05:00
-#SBATCH --ntasks 1
-
-module load software/plink-2.00a
-
-nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
-```
-{: .lh-tight }
+{: .example .fs-3 .lh-tight }
+> Example on the UCT HPC cluster: `test.sbatch`
+> ```
+> #!/usr/bin/env bash
+> #SBATCH --account humgen
+> #SBATCH --partition sadacc-short
+> #SBATCH --nodes 1
+> #SBATCH --time 00:05:00
+> #SBATCH --ntasks 1
+> 
+> module load software/plink-2.00a
+> 
+> nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
+> ```
 
 {: .highlight .fs-3 }
 > - In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
@@ -439,18 +434,17 @@ nextflow run idat2vcf.nf -profile local,singularity,hg19 -w "./work/"
 Place the first command above in your sbatch job submission script and submit on your cluster.
 
 
-Example:
-```
-#!/usr/bin/env bash
-#SBATCH --account humgen
-#SBATCH --partition sadacc-short
-#SBATCH --nodes 1
-#SBATCH --time 06:00:00
-#SBATCH --ntasks 1
-
-nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w /scratch/xxxxxxxxx/xxxxxxxx/gwas/work/
-```
-{: .fs-3 .lh-tight }
+{: .example .fs-3 .lh-tight }
+> ```
+> #!/usr/bin/env bash
+> #SBATCH --account humgen
+> #SBATCH --partition sadacc-short
+> #SBATCH --nodes 1
+> #SBATCH --time 06:00:00
+> #SBATCH --ntasks 1
+> 
+> nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w /scratch/xxxxxxxxx/xxxxxxxx/gwas/work/
+> ```
 
 
 {: .note .fs-3 .lh-tight }
