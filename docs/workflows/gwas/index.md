@@ -15,10 +15,8 @@ has_toc: false
 - [Installation](#install)
   - [Requirements](#requirements)
   - [Install](#procedure)
-- [Convert IDAT to VCF](idat-to-vcf.md)
-- [Perform GWAS Analysis](analysis.md)
----
 
+---
 
 # Installation <a name="install"></a>
 
@@ -58,6 +56,12 @@ tar zxvf v0.1.tar.gz
 rm v0.1.tar.gz
 cd genemapgwas-0.1
 ```
+
+---
+
+Go to [Convert IDAT to VCF](idat-to-vcf.md)
+
+Go to [Perform GWAS Analysis](analysis.md)
 
 ---
 
