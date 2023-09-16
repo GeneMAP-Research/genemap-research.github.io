@@ -298,7 +298,7 @@ containers_dir  = PATH WHERE CONTAINERS ARE STORED
 account         = humgen        # CHANGE TO YOURS
 partition       = sadacc-short      # CHANGE TO YOURS
 
-executor >  `slurm (1)`
+executor >  slurm (1)
 [3d/e89581] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
 PLINK v2.00a3.6LM AVX2 Intel (14 Aug 2022)     www.cog-genomics.org/plink/2.0/
 (C) 2005-2022 Shaun Purcell, Christopher Chang   GNU General Public License v3
@@ -311,7 +311,8 @@ Workflow completed at: 2023-09-16T13:36:57.528+02:00
      Execution status: OK
 ```
 
-You can put these in you job submission script as below.
+You can put these in you job submission script. See below.
+
 
 
 {: .important }
@@ -334,7 +335,7 @@ module load software/plink-2.00a
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
 
-{: .note }
+{: .highlight }
 > In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
 >
 > This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
@@ -342,5 +343,8 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 > However, we have set enough time (in HH:MM:SS - one more than the maximum time requested in the config file) to avoid premature termination of the jobs.
 
 
+
+{: .highlight .fs-1 }
+> Test Font size 1
 
 _under development_
