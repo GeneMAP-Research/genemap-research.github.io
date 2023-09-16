@@ -76,7 +76,7 @@ params {
   gtc_max_memory    = 3.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
 }
 ```
-{: .fs-2 }
+{: .fs-3 .lh-tight }
 
 ## Config parameters <a name="parameters"></a>
 Let's go through each parameter one after the other
@@ -101,9 +101,8 @@ Let's go through each parameter one after the other
 │   ├── 236572634
 │   ├── 562525763
 │   └── 748974817
-
 ```
-{: .fs-2 }
+{: .fs-3 }
 
 
 ---
@@ -252,7 +251,7 @@ PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
 Workflow completed at: 2023-09-16T13:35:26.858+02:00
      Execution status: OK
 ```
-{: .fs-1 }
+{: .fs-3 .lh-tight }
 
 
 {: .note .fs-3 }
@@ -315,7 +314,7 @@ PLINK v2.00a3.6LM AVX2 Intel (14 Aug 2022)     www.cog-genomics.org/plink/2.0/
 Workflow completed at: 2023-09-16T13:36:57.528+02:00
      Execution status: OK
 ```
-{: .fs-2 }
+{: .fs-3 .lh-tight }
 
 
 You can put these in you job submission script. See below.
@@ -341,6 +340,7 @@ module load software/plink-2.00a
 
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
+{: .lh-tight }
 
 {: .highlight .fs-3 }
 > In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
@@ -351,7 +351,23 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 
 
 
-{: .highlight .fs-2 }
-> Test Font size 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 _under development_
