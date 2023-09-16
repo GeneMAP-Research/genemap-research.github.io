@@ -4,7 +4,7 @@ title: gwas
 parent: Workflows
 nav_order: 1
 has_children: true
-has_toc: true
+has_toc: false
 ---
 
 <p align="center"><img src="../../assets/img/genemap-gwas.svg" height="50%" width="50%"></p>
@@ -15,7 +15,8 @@ has_toc: true
 - [Installation](#install)
   - [Requirements](#requirements)
   - [Install](#procedure)
-
+- [Convert IDAT to VCF](idat-to-vcf.md)
+- [Perform GWAS Analysis](analysis.md)
 ---
 
 
