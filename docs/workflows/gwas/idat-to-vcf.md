@@ -177,6 +177,7 @@ There are three profile categories in the workflow:
   - slurm: cluster running a slurm job workload manager/scheduler.
   - pbspro: cluster running a pbspro job workload manager/scheduler.
 
+
 - **containers**: there are three containers
   - apptainer: Formerly singularity. Some clusters might still not run it
   - singularity: Now apptainer, Some clusters might still run it (actually most systems still do).
@@ -189,7 +190,8 @@ nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <w
 ```
 
 {: .important }
-> Nextflow can generate many large intermediate files. So it is important to specify an appropriate work directory with the `-w` option
+> Nextflow can generate many large intermediate files. So it is important to specify an appropriate work directory with the `-w` option.
+>
 > Nextflow needs these intermediates files to resume your job in case the workflow terminates without completing. So only delete the work directory when you are sure your workflow is complete and you are satisfied with all the outputs. Else, rerunning it will start from scratch.
 
 
@@ -198,10 +200,12 @@ Let's see an example. This example will pull and use a plink2 image (which is li
 
 
 {: .note }
-> First, make sure nextflow and singularity are loaded - check how these are loaded on your system
+> First, make sure nextflow and singularity are loaded.
+> Check how these are loaded on your system
 >
-> module load <nextflow>      
-> module load <singularity>
+> `module load nextflow`
+>    
+> `module load singularity`
 
 
 ### Running with all three profile categories
@@ -209,7 +213,7 @@ Let's see an example. This example will pull and use a plink2 image (which is li
 nextflow run test.nf -profile test,local,singularity,hg19 -w "./work/"
 ```
 
-- **NB**: For the test, we add a test profile before the three categories we mentioned above.
+- NB: For the test, we add a test profile before the three categories we mentioned above.
 
 
 ### Running without the executor profile category
@@ -225,6 +229,20 @@ nextflow run test.nf -profile test,singularity,hg19 -w "./work/"
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
 - Most clusters do not run docker for security reasons.
-- To run the workflow on a cluster without selecting a container, you need to have all the required packages for the workflow installed pr loaded on your system to use the local executor
+- To run the workflow on a cluster without selecting a container, you need to have all the required packages for the workflow installed and loaded.
+- This can be done in your job submission script in which you compose the nextflow command line.
+
+
+Example
+```
+#!usr/bin/env bash
+#SBATCH --account humgen
+#SBATCH --partition ada
+#SBATCH --nodes 1
+
+module load software/singularity
+
+nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
+```
 
 _under development_
