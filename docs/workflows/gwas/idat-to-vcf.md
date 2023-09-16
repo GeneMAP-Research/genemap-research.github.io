@@ -106,7 +106,7 @@ Let's go through each parameter one after the other
   - These files are specific to the chip that was used to genotype your samples and should be provided by the genotyping company.
   - Request them if you don't have them.
   - For the H3Africa chip, you can get these files from [here](https://chipinfo.h3abionet.org/downloads){:target="_blank"}.
-  - NB: The cluster file can be custom-made. See [this document](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/custom-cluster-file-cnv-tech-note-770-2017-017.pdf) for more information.
+  - NB: The cluster file can be custom-made. See [this document](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/custom-cluster-file-cnv-tech-note-770-2017-017.pdf){:target="_blank"} for more information.
 
 ---
 
@@ -140,7 +140,7 @@ If you are not required to specify any of these in your job submission scripts, 
 ---
 
 `containers_dir`:
-  - Path where docker images (the gencall image) will pulled from our [dockerhub](https://hub.docker.com/repository/docker/sickleinafrica/gencall/general) and stored.
+  - Path where docker images (the gencall image) will pulled from our [dockerhub](https://hub.docker.com/repository/docker/sickleinafrica/gencall/general){:target="_blank"} and stored.
   - This path should have sufficient storage capacity. 
     - The gencall image is about 530 MB in size.
     - The plink2 test image is abot 80 MB.
