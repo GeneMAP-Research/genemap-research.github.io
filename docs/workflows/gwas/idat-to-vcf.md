@@ -327,7 +327,7 @@ Example on the UCT HPC cluster: `test.sbatch`
 #SBATCH --account humgen
 #SBATCH --partition sadacc-short
 #SBATCH --nodes 1
-#SBATCH --time 06:00:00
+#SBATCH --time 00:05:00
 #SBATCH --ntasks 1
 
 module load software/plink-2.00a
@@ -340,7 +340,7 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 >
 > This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
 >
-> However, we have set enough time (in HH:MM:SS - one more than the maximum time requested in the config file) to avoid premature termination of the jobs.
+> We have also set small time (5mins - in HH:MM:SS) because this is a test. When running the actual jobs, it is best to set enough time (more than the maximum time requested in the config file) to avoid premature termination of the jobs.
 
 
 
