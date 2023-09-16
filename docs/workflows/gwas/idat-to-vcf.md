@@ -416,6 +416,7 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w "./work/"
 ```
 
+---
 
 - You have requested an interactive job on your cluster with enough resources. 
 - So nextflow will request resources be split from what you were already allocated.
@@ -438,7 +439,7 @@ Examples:
 #SBATCH --time 06:00:00
 #SBATCH --ntasks 1
 
-nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w /scratch/eshkev001/projects/gwas/work/
+nextflow run idat2vcf.nf -profile slurm,singularity,hg19 -w /scratch/xxxxxxxxx/xxxxxxxx/gwas/work/
 ```
 {: .fs-3 .lh-tight }
 
