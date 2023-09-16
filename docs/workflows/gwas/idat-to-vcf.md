@@ -179,11 +179,20 @@ There are three profile categories in the workflow:
   - slurm: cluster running a slurm job workload manager/scheduler.
   - pbspro: cluster running a pbspro job workload manager/scheduler.
 
+<br>
 
 - **containers**: there are three containers
-  - apptainer: Formerly singularity. Some clusters might still not run it
-  - singularity: Now apptainer, Some clusters might still run it (actually most systems still do).
+  - apptainer: formerly singularity. Some clusters might still not run it
+  - singularity: now apptainer, Some clusters might still run it (actually most systems still do).
   - docker: Most clusters do not run docker for security reasons. It can be used on local computers.
+
+<br>
+
+- **references**: there are two references
+  - hg19: this requires only the fasta file be specified.
+  - hg38: this requires a fasta and a bam alignment file (see above).
+
+<br>
 
 The workflow commandline is built as follows.
 
