@@ -430,7 +430,7 @@ nextflow run idat2vcf.nf -profile local,singularity,hg19 -w "./work/"
 Place the first command above in your sbatch job submission script and submit on your cluster.
 
 
-Examples:
+Example:
 ```
 #!/usr/bin/env bash
 #SBATCH --account humgen
