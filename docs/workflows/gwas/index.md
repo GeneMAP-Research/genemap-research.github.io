@@ -59,9 +59,9 @@ cd genemapgwas-0.1
 
 ---
 
-Go to [Convert IDAT to VCF](idat-to-vcf.md)
+Go to [Convert IDAT to VCF](idat-to-vcf.md) workflow
 
-Go to [Perform GWAS Analysis](analysis.md)
+Go to [GWAS Analysis](analysis.md) workflow
 
 ---
 
