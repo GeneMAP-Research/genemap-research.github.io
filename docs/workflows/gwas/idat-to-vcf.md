@@ -16,6 +16,9 @@ nav_order: 1
 # Contents
 - [Installation](#install)
 - [Edit the configuration file](#config)
+  - [Config parameters](#parameters)
+- [Running the workflow](#run)
+  - [Test](#test)
 
 
 ---
@@ -75,7 +78,7 @@ params {
 ```
 
 
-## Config parameters
+## Config parameters <a name="parameters"></a>
 Let's go through each parameter one after the other
 
 ---
@@ -111,12 +114,14 @@ Let's go through each parameter one after the other
 ---
 
 `fasta_ref` and `bam_alignment`:
-  - For hg19 dataset, only the references fasta file is required.
+  - For hg19 dataset, only the reference fasta file is required.
   - The gtc2vcf tool adds a functionality to process calls generated in hg19 in hg38. This requires you to realign the flanking sequences from the manifest files. This is described [here](https://github.com/freeseek/gtc2vcf#using-an-alternative-genome-reference){:target="_blank"}.
+  - NB: Provide these with their absolute paths.
 
 ---
 
 `output_prefix`: Output file name
+
 `output_dir`: Path to save output
 
 ---
@@ -140,7 +145,7 @@ If you are not required to specify any of these in your job submission scripts, 
 ---
 
 `containers_dir`:
-  - Path where docker images (the gencall image) will pulled from our [dockerhub](https://hub.docker.com/repository/docker/sickleinafrica/gencall/general){:target="_blank"} and stored.
+  - Path where docker images (the gencall image) will be pulled from our [dockerhub](https://hub.docker.com/repository/docker/sickleinafrica/gencall/general){:target="_blank"} and stored.
   - This path should have sufficient storage capacity. 
     - The gencall image is about 530 MB in size.
     - The plink2 test image is abot 80 MB.
@@ -149,8 +154,8 @@ If you are not required to specify any of these in your job submission scripts, 
 
 `idat_threads`, `idat_max_time` and `idat_max_memomy`:
   - These resources will be used when converting from IDAT to GTC with gencall.
-  - From tests, this step works pretty well with minimal resources.
-  - Try it with the default ones, and only edit if your unsatisfied with the outcome.
+  - From experience, this step works pretty well with minimal resources.
+  - Try it with the default ones, and only edit if you are unsatisfied with the outcome.
   - Requesting minimal resources will enable your jobs to fit within the cracks and get submitted well ahead of other jobs that are requesting massive resources.
 
 `gtc_threads`, `gtc_max_time` and `gtc_max_memomy`:
@@ -161,5 +166,65 @@ If you are not required to specify any of these in your job submission scripts, 
 ---
 
 
+# Running the workflow <a name="run"></a>
+---
+
+The workflow runs on a simple logic based on nextflow profiles.
+
+There are three profile categories in the workflow:
+- **executors**: there are three executors based on where you are working
+  - local: this can be used anywhere; your computer (laptop) or any cluster (slurm, pbspro, etc). 
+  - slurm: cluster running a slurm job workload manager/scheduler.
+  - pbspro: cluster running a pbspro job workload manager/scheduler.
+
+- **containers**: there are three containers
+  - apptainer: Formerly singularity. Some clusters might still not run it
+  - singularity: Now apptainer, Some clusters might still run it (actually most systems still do).
+  - docker: Most clusters do not run docker for security reasons. It can be used on local computers.
+
+The workflow commandline is built as follows.
+
+```sh
+nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <work directory>
+```
+
+{: .important }
+> Nextflow can generate many large intermediate files. So it is important to specify an appropriate work directory with the `-w` option
+> Nextflow needs these intermediates files to resume your job in case the workflow terminates without completing. So only delete the work directory when you are sure your workflow is complete and you are satisfied with all the outputs. Else, rerunning it will start from scratch.
+
+
+## Test <a name="test"></a>
+Let's see an example. This example will pull and use a plink2 image (which is light-weight) using singularity.
+
+
+{: .note }
+> First, make sure nextflow and singularity are loaded - check how these are loaded on your system
+>
+> module load <nextflow>      
+> module load <singularity>
+
+
+### Running with all three profile categories
+```sh
+nextflow run test.nf -profile test,local,singularity,hg19 -w "./work/"
+```
+
+- **NB**: For the test, we add a test profile before the three categories we mentioned above.
+
+
+### Running without the executor profile category
+```sh
+nextflow run test.nf -profile test,singularity,hg19 -w "./work/"
+```
+
+- The local executor will be used by default
+
+
+### Running on a cluster without the container profile category
+```sh
+nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
+```
+- Most clusters do not run docker for security reasons.
+- To run the workflow on a cluster without selecting a container, you need to have all the required packages for the workflow installed pr loaded on your system to use the local executor
 
 _under development_
