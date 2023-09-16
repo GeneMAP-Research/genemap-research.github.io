@@ -209,11 +209,14 @@ Let's see an example. This example will pull and use a plink2 image (which is li
 
 
 ### Running with all three profile categories
+---
 ```sh
 nextflow run test.nf -profile test,local,singularity,hg19 -w "./work/"
 ```
 
 NB: For the test, we add a test profile before the three categories we mentioned above.
+
+
 
 If all goes well, you should see a message like this
 ```
@@ -248,37 +251,47 @@ Workflow completed at: 2023-09-16T12:30:09.175+02:00
 
 {: .note }
 > You might see a few warnings:
-> - regarding `echo` and `debug`. These are cause by different versions of nextflow and do not pose any issues.
-> - regarding singularity cache directory. As long as you set one in your `nextflow.config` file, it should be no problem.
+> - regarding `echo` and `debug`. These are caused by different versions of nextflow and do not pose any issues.
+> - regarding singularity cache directory. As long as you set a value for `containers_dir` in your `nextflow.config` file, it should be no problem.
+>
+> If the containers directory is not set, the workflow will create one in your work directory.
 
 
 
 ### Running without the executor profile category
+---
 ```sh
 nextflow run test.nf -profile test,singularity,hg19 -w "./work/"
 ```
 
-- The local executor will be used by default
+The local executor will be used by default.
+
+The output should be similar as above. However this time, the plink2 image will not be redownloaded since it is already present in the containers directory we set.
 
 
 
 ### Running on a cluster without the container profile category
 ```sh
+# first load plink2 on your cluster
+
+# on the UCT HPC cluster, it is
+module load software/plink-2.00a
+
+# then run
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
-- Most clusters do not run docker for security reasons.
-- To run the workflow on a cluster without selecting a container, you need to have all the required packages for the workflow installed and loaded.
-- This can be done in your job submission script in which you compose the nextflow command line.
+You can put these in you job submission script as below.
 
 
-Example
+Example on the UCT HPC cluster
 ```
 #!usr/bin/env bash
 #SBATCH --account humgen
 #SBATCH --partition ada
 #SBATCH --nodes 1
+#SBATCH --ntasks 1
 
-module load software/singularity
+module load software/plink-2.00a
 
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
