@@ -22,27 +22,24 @@ nav_order: 1
 
 
 # Installation <a name="install"></a>
-See how to install `genemapgwas` workflow [here](../index.md)
+---
+See how to install the `genemapgwas` workflow [here](index.md)
 
 
 After installing the workflow, navigate to the illumina folder.
 
 ```sh
-
-cd genemapgwas-0.3/illumina/
-
+cd genemapgwas-0.1/illumina/
 ```
-
----
 
 
 # Edit the Configuration file <a name="config"></a>
+---
 In the `illumina` folder is a master configuration file '`nextflow.config`' where all your input options will be specified.
 
 Only edit the lines displayed below.
 
 ```
-
 params {
 
   // data-related parameters
@@ -75,24 +72,24 @@ params {
   gtc_max_time      = 3.h                         // maximum time each job is allowed to run (h - hours; m - minutes)
   gtc_max_memory    = 3.GB                        // maximum memory each job is allowed to use (GB - gigabyte; MB - megabyte)
 }
-
 ```
 
----
 
 ## Config parameters
-Let's go through each parameter 
+---
+Let's go through each parameter one after the other
 
 `idat_dir`:
-  - The illumina gencall algorithm needs you to provide a folder that contains pairs of gren and red idat files.
-  - You many have multiple folders, each containing a different number of idat pairs.
-  - 
+  - The illumina gencall algorithm needs you to provide a folder that contains pairs of gren and red idat files (see example below `034928383`).
+  - You many have multiple folders, each containing a different number of idat pairs (example below shows one idat folder containing two pairs of idat files).
+  - The folders are contained within a folder called `intensities`. This is the path we provide to the workflow (the absolute path).
+  - The workflow will grab all the sub-folders containing the idat files and pass them to genecall, hence enabling batch processing.
 
 
 ```
 .
 ├── intensities
-│             ├── 034928383
+│   ├── 034928383
 │   │   ├── file1.grn.idat
 │   │   ├── file1.red.idat
 │   │   ├── file2.grn.idat
@@ -102,5 +99,7 @@ Let's go through each parameter
 │   └── 748974817
 
 ```
+
+
 
 _under development_
