@@ -325,9 +325,9 @@ You can put these in you job submission script. See below.
 
 
 {: .important .fs-3 }
-> If submittng your job to a workload manager like slurm, you must specify your account and partition in the `nextflow.config` file.
+> - If submittng your job to a workload manager like slurm, you must specify your account and partition in the `nextflow.config` file.
 > 
-> But if you already requested an interactive job with enough respurces as what you specified in your config file, then either select a local executor or do not select an executor at all.
+> - But if you already requested an interactive job with enough respurces as what you specified in your config file, then either select a local executor or do not select an executor at all.
 
 
 Example on the UCT HPC cluster: `test.sbatch`
@@ -346,11 +346,11 @@ nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 {: .lh-tight }
 
 {: .highlight .fs-3 }
-> In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
+> - In my sbatch script, I only requested 1 thread/cpus (--ntasks) because I am only running one nextflow commandline.
 >
-> This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
+> - This will ensure that the job is submitted quickly, allowing nextflow to request the rest of the resources for each process.
 >
-> We have also set small time (5mins - in HH:MM:SS) because this is a test. When running the actual jobs, it is best to set enough time (more than the maximum time requested in the config file) to avoid premature termination of the jobs.
+> - We have also set small time (5mins - in HH:MM:SS) because this is a test. When running the actual jobs, it is best to set enough time (more than the maximum time requested in the config file) to avoid premature termination of the jobs.
 
 
 ### Using the hg38 reference
