@@ -222,7 +222,7 @@ NB: For the test, we add a test profile before the three categories we mentioned
 If all goes well, you should see a message like this
 ```
 N E X T F L O W  ~  version 21.10.6
-Launching `test.nf` [angry_spence] - revision: 08133c0e8a
+Launching `test.nf` [jolly_jennings] - revision: c99dfcf444
 
         IDAT to VCF: TEST
 
@@ -230,15 +230,15 @@ idat_dir        = YOUR IDAT PARENT DIRECTORY
 manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
 manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
 cluster_file    = YOUR CLUSTER FILE
-fasta_ref     = HUMAN REFERENCE FASTA
+fasta_ref      = HUMAN REFERENCE FASTA
 output_prefix   = YOUR OUTPUT FILE NAME PREFIX
 output_dir      = PATH WHERE YOUR OUTPUT IS STORED
-account         = YOUR CLUSTER ACCOUNT/PROJECT NAME
-partition       = YOUR CLUSTER QUEUE/PARTITION
 containers_dir  = PATH WHERE CONTAINERS ARE STORED
+account         = humgen        # CHANGE TO YOURS
+partition       = sadacc-short      # CHANGE TO YOURS
 
 executor >  local (1)
-[47/4c3d71] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
+[5f/ddaf29] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
 PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
 (C) 2005-2023 Shaun Purcell, Christopher Chang   GNU General Public License v3
 
@@ -246,7 +246,7 @@ PLINK v2.00a4.7LM 64-bit Intel (12 Sep 2023)   www.cog-genomics.org/plink/2.0/
 --ped <filename>   : Specify full name of .ped file.
 --map <filename>   : Specify full name of .map file.
 
-Workflow completed at: 2023-09-16T12:30:09.175+02:00
+Workflow completed at: 2023-09-16T13:35:26.858+02:00
      Execution status: OK
 ```
 
@@ -280,6 +280,37 @@ module load software/plink-2.00a
 # then run
 nextflow run test.nf -profile test,slurm,hg19 -w "./work/"
 ```
+
+```
+N E X T F L O W  ~  version 21.10.6
+Launching `test.nf` [astonishing_solvay] - revision: c99dfcf444
+
+        IDAT to VCF: TEST
+
+idat_dir        = YOUR IDAT PARENT DIRECTORY
+manifest_bpm    = CHIP-SPECIFIC BPM MANISFEST
+manifest_csv    = CHIP-SPECIFIC CSV MANISFEST
+cluster_file    = YOUR CLUSTER FILE
+fasta_ref      = HUMAN REFERENCE FASTA
+output_prefix   = YOUR OUTPUT FILE NAME PREFIX
+output_dir      = PATH WHERE YOUR OUTPUT IS STORED
+containers_dir  = PATH WHERE CONTAINERS ARE STORED
+account         = humgen        # CHANGE TO YOURS
+partition       = sadacc-short      # CHANGE TO YOURS
+
+executor >  `slurm (1)`
+[3d/e89581] process > plink (processing ... YOUR IDAT PARENT DIRECTORY) [100%] 1 of 1 ✔
+PLINK v2.00a3.6LM AVX2 Intel (14 Aug 2022)     www.cog-genomics.org/plink/2.0/
+(C) 2005-2022 Shaun Purcell, Christopher Chang   GNU General Public License v3
+
+--pedmap <prefix>  : Specify .ped + .map filename prefix.
+--ped <filename>   : Specify full name of .ped file.
+--map <filename>   : Specify full name of .map file.
+
+Workflow completed at: 2023-09-16T13:36:57.528+02:00
+     Execution status: OK
+```
+
 You can put these in you job submission script as below.
 
 
