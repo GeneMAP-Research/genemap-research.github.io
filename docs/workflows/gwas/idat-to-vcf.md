@@ -14,51 +14,23 @@ nav_order: 1
 ---
 
 # Contents
-- [Requirements](#req)
 - [Installation](#install)
 - [Edit the configuration file](#config)
-- [Prepare your input files](#)
-- [](#)
 
----
-
-
-# Requirements <a name="req"></a>
-- [Nextflow](https://www.nextflow.io/docs/latest/getstarted.html#installation)
-	
-	Check that nextflow is installed on your cluster and load it.
-
-{: .note-title }
-> Preferred version:
->
-> 21.10 or greater
-
-
-- [Singularity](https://apptainer.org/docs/user/latest/quick_start.html#quick-installation)
-	
-	Singularity has now been changed to Apptainer, but most clusters to run it as singularity.
-	We'll need singularity to pull the `gencall` docker container from our dockerhub account as
-	a singularity image file.
-
-	Check if singularity is installed on your cluster and load it.
-
-{: .note-title }
-> Preferred version:
->
-> 3.5 or greater
 
 ---
 
 
 # Installation <a name="install"></a>
-Navigate to the path where you would like to run the workflow from and run the code below.
+See how to install `genemapgwas` workflow [here](../index.md)
+
+
+After installing the workflow, navigate to the illumina folder.
 
 ```sh
-wget https://github.com/GeneMAP-Research/genemapgwas/archive/refs/tags/v0.3.tar.gz
-
-tar zxvf v0.3.tar.gz
 
 cd genemapgwas-0.3/illumina/
+
 ```
 
 ---
@@ -69,7 +41,7 @@ In the `illumina` folder is a master configuration file '`nextflow.config`' wher
 
 Only edit the lines displayed below.
 
-```sh
+```
 
 params {
 
@@ -105,6 +77,10 @@ params {
 }
 
 ```
+
+---
+
+
 
 
 _under development_
