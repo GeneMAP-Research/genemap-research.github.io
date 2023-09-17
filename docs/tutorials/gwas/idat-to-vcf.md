@@ -11,7 +11,7 @@ has_toc: false
 <p align="center"><img src="../../../assets/img/genemap-tutorials.svg" height="50%" width="50%"></p>
 
 
-# Converting Illumina IDAT to VCF/PLINK PED
+# Converting Illumina IDAT to VCF/PLINK PED <a name="top"></a>
 ---
 
 <p align="center">
@@ -106,37 +106,43 @@ export PATH=${PATH}:${HOME}/bin
 ***Then***, check that the installation is done properly
 ```shell
 gencall --help
-
-
-# Usage: iaap-cli gencall [arguments] [options]
-# 
-# Arguments:
-#   [manifest]       Location of BPM manifest file to use.
-#   [cluster-file]   Location of EGT cluster file to use.
-#   [output-folder]  Location to output genotype files.
-# 
-# Options:
-#   -?|-h|--help                                                      Show help information
-#   -f|--idat-folder <idat-folder>                                    Location of IDAT folder. Will recurse subdirectories to convert all IDAT files.
-#   -s|--sample-sheet <sample-sheet.csv>                              Location of sample sheet csv. See documentation for sample sheet format.
-#   -g|--output-gtc                                                   Will output GTC files for genotype info (default = false)
-#   -p|--output-ped                                                   Will output PED files for genotype info (default = false) 
-#   -pt|--output-ped-tab-delimited                                    Will output PED files delimited by tabs (default = false)
-#   -pcs|--output-ped-customer-strand                                 Will output PED files using customer strand (default = false)
-#   -i|--gentrain-id <gentrain-id>                                    Version of Gentrain algorithm to use (default = 3)
-#   -c|--gencall-cutoff <gencall-cutoff>                              Cutoff score for gencall algorithm (default = 0.15)
-#   -t|--num-threads <num-threads>                                    Number of parallel threads to run (default = 1)
-#   -b|--gtc-write-buffer-size <buffer-size>                          Buffer size used when writing GTC files (default = 131072)
-#   -emi|--gender-estimate-min-loci <min-loci>                        Minimum number of autosomal loci for gender estimation (default = 100)
-#   -ema|--gender-estimate-max-loci <max-loci>                        Maximum number of autosomal loci for gender estimation (default = 10000)
-#   -emx|--gender-estimate-min-x-loci <min-x-loci>                    Minimum number of X loci for gender estimation (default = 20)
-#   -emy|--gender-estimate-min-y-loci <min-y-loci>                    Minimum number of Y loci for gender estimation (default = 20)
-#   -ec|--gender-estimate-call-rate-threshold <call-rate-threshold>   Threshold for autosomal call rate for gender estimation (default = 0.97)
-#   -eyt|--gender-estimate-y-threshold <y-threshold>                  Threshold for Y intensity for gender estimation (default = 0.3)
-#   -ext|--gender-estimate-x-threshold <x-threshold>                  Threshold for X intensity for gender estimation (default = 0.9)
-#   -eht|--gender-estimate-x-het-rate-threshold <het-rate-threshold>  Threshold for X Het Rate for gender estimation (default = 0.1)
-#   -inc|--include-file <include-file>                                Location to Loci of Interest file.
 ```
+
+```
+Usage: iaap-cli gencall [arguments] [options]
+
+Arguments:
+  [manifest]       Location of BPM manifest file to use.
+  [cluster-file]   Location of EGT cluster file to use.
+  [output-folder]  Location to output genotype files.
+
+Options:
+  -?|-h|--help                                                      Show help information
+  -f|--idat-folder <idat-folder>                                    Location of IDAT folder. Will recurse subdirectories to convert all IDAT files.
+  -s|--sample-sheet <sample-sheet.csv>                              Location of sample sheet csv. See documentation for sample sheet format.
+  -g|--output-gtc                                                   Will output GTC files for genotype info (default = false)
+  -p|--output-ped                                                   Will output PED files for genotype info (default = false) 
+  -pt|--output-ped-tab-delimited                                    Will output PED files delimited by tabs (default = false)
+  -pcs|--output-ped-customer-strand                                 Will output PED files using customer strand (default = false)
+  -i|--gentrain-id <gentrain-id>                                    Version of Gentrain algorithm to use (default = 3)
+  -c|--gencall-cutoff <gencall-cutoff>                              Cutoff score for gencall algorithm (default = 0.15)
+  -t|--num-threads <num-threads>                                    Number of parallel threads to run (default = 1)
+  -b|--gtc-write-buffer-size <buffer-size>                          Buffer size used when writing GTC files (default = 131072)
+  -emi|--gender-estimate-min-loci <min-loci>                        Minimum number of autosomal loci for gender estimation (default = 100)
+  -ema|--gender-estimate-max-loci <max-loci>                        Maximum number of autosomal loci for gender estimation (default = 10000)
+  -emx|--gender-estimate-min-x-loci <min-x-loci>                    Minimum number of X loci for gender estimation (default = 20)
+  -emy|--gender-estimate-min-y-loci <min-y-loci>                    Minimum number of Y loci for gender estimation (default = 20)
+  -ec|--gender-estimate-call-rate-threshold <call-rate-threshold>   Threshold for autosomal call rate for gender estimation (default = 0.97)
+  -eyt|--gender-estimate-y-threshold <y-threshold>                  Threshold for Y intensity for gender estimation (default = 0.3)
+  -ext|--gender-estimate-x-threshold <x-threshold>                  Threshold for X intensity for gender estimation (default = 0.9)
+  -eht|--gender-estimate-x-het-rate-threshold <het-rate-threshold>  Threshold for X Het Rate for gender estimation (default = 0.1)
+  -inc|--include-file <include-file>                                Location to Loci of Interest file.
+```
+{: .fs-3 .lh-tight }
+
+
+[Back to top](#top)
+
 
 ### Get a pre-compiled binary of gtc2vcf plugin for bcftools <a name="get-gtc"></a>
 * * *
@@ -172,6 +178,7 @@ It will still work if your version of bcftools is higher than the version of gtc
 
 
 {: .example }
+>
 > Linux users
 > ```shell
 > wget https://software.broadinstitute.org/software/gtc2vcf/gtc2vcf_1.15.1-20220518.zip
@@ -195,75 +202,84 @@ unzip gtc2vcf_1.15.1-20220518.zip
 *You should see three files in the current directory*
 ```shell
 ls
-
-# gtc2vcf.so
-# affy2vcf.so
-# gtc2vcf_plot.R
 ```
+
+```
+gtc2vcf.so
+affy2vcf.so
+gtc2vcf_plot.R
+```
+{: .fs-3 .lh-tight }
+
 
 We will use `gtc2vcf.so` to process our Illumina IDAT files
 
 ***Next***, test that the version of gtc2vcf downloaded works with your installation of bcftools
 ```shell
 bcftools plugin ./gtc2vcf.so -help
-
-# WARNING: bcftools version mismatch .. bcftools at 1.16, the plugin "./gtc2vcf.so" at 1.15.1
-# 
-# About: convert Illumina GTC files containing intensity data into VCF. (version 2022-05-18 https://github.com/freeseek/gtc2vcf)
-# Usage: bcftools +gtc2vcf [options] [<A.gtc> ...]
-# 
-# Plugin options:
-#     -l, --list-tags                   list available FORMAT tags with description for VCF output
-#     -t, --tags LIST                   list of output FORMAT tags [GT,GQ,IGC,BAF,LRR,NORMX,NORMY,R,THETA,X,Y]
-#     -b, --bpm <file>                  BPM manifest file
-#     -c, --csv <file>                  CSV manifest file (can be gzip compressed)
-#     -e, --egt <file>                  EGT cluster file
-#     -f, --fasta-ref <file>            reference sequence in fasta format
-#         --set-cache-size <int>        select fasta cache size in bytes
-#         --gc-window-size <int>        window size in bp used to compute the GC content (-1 for no estimate) [200]
-#     -g, --gtcs <dir|file>             GTC genotype files from directory or list from file
-#     -i, --idat                        input IDAT files rather than GTC files
-#         --capacity <int>              number of variants to read from intensity files per I/O operation [32768]
-#         --adjust-clusters             adjust cluster centers in (Theta, R) space (requires --bpm and --egt)
-#         --use-gtc-sample-names        use sample name in GTC files rather than GTC file name
-#         --do-not-check-bpm            do not check whether BPM and GTC files match manifest file name
-#         --genome-studio <file>        input a GenomeStudio final report file (in matrix format)
-#         --no-version                  do not append version and command line to the header
-#     -o, --output <file>               write output to a file [standard output]
-#     -O, --output-type u|b|v|z|t[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF
-#                                       t: GenomeStudio tab-delimited text output, 0-9: compression level [v]
-#         --threads <int>               number of extra output compression threads [0]
-#     -x, --extra <file>                write GTC metadata to a file
-#     -v, --verbose                     print verbose information
-# 
-# Manifest options:
-#         --beadset-order               output BeadSetID normalization order (requires --bpm and --csv)
-#         --fasta-flank                 output flank sequence in FASTA format (requires --csv)
-#     -s, --sam-flank <file>            input flank sequence alignment in SAM/BAM format (requires --csv)
-#         --genome-build <assembly>     genome build ID used to update the manifest file [GRCh38]
-# 
-# Examples:
-#     bcftools +gtc2vcf -i 5434246082_R03C01_Grn.idat
-#     bcftools +gtc2vcf 5434246082_R03C01.gtc
-#     bcftools +gtc2vcf -b HumanOmni2.5-4v1_H.bpm -c HumanOmni2.5-4v1_H.csv
-#     bcftools +gtc2vcf -e HumanOmni2.5-4v1_H.egt
-#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv -e GSA-24v3-0_A1_ClusterFile.egt -f human_g1k_v37.fasta -o GSA-24v3-0_A1.vcf
-#     bcftools +gtc2vcf -c HumanOmni2.5-4v1_H.csv -f human_g1k_v37.fasta 5434246082_R03C01.gtc -o 5434246082_R03C01.vcf
-#     bcftools +gtc2vcf -f human_g1k_v37.fasta --genome-studio GenotypeReport.txt -o GenotypeReport.vcf
-# 
-# Examples of manifest file options:
-#     bcftools +gtc2vcf -b GSA-24v3-0_A1.bpm -c GSA-24v3-0_A1.csv --beadset-order
-#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --fasta-flank -o GSA-24v3-0_A1.fasta
-#     bwa mem -M GCA_000001405.15_GRCh38_no_alt_analysis_set.fna GSA-24v3-0_A1.fasta -o GSA-24v3-0_A1.sam
-#     bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --sam-flank GSA-24v3-0_A1.sam -o GSA-24v3-0_A1.GRCh38.csv
 ```
+
+```
+WARNING: bcftools version mismatch .. bcftools at 1.16, the plugin "./gtc2vcf.so" at 1.15.1
+
+About: convert Illumina GTC files containing intensity data into VCF. (version 2022-05-18 https://github.com/freeseek/gtc2vcf)
+Usage: bcftools +gtc2vcf [options] [<A.gtc> ...]
+
+Plugin options:
+    -l, --list-tags                   list available FORMAT tags with description for VCF output
+    -t, --tags LIST                   list of output FORMAT tags [GT,GQ,IGC,BAF,LRR,NORMX,NORMY,R,THETA,X,Y]
+    -b, --bpm <file>                  BPM manifest file
+    -c, --csv <file>                  CSV manifest file (can be gzip compressed)
+    -e, --egt <file>                  EGT cluster file
+    -f, --fasta-ref <file>            reference sequence in fasta format
+        --set-cache-size <int>        select fasta cache size in bytes
+        --gc-window-size <int>        window size in bp used to compute the GC content (-1 for no estimate) [200]
+    -g, --gtcs <dir|file>             GTC genotype files from directory or list from file
+    -i, --idat                        input IDAT files rather than GTC files
+        --capacity <int>              number of variants to read from intensity files per I/O operation [32768]
+        --adjust-clusters             adjust cluster centers in (Theta, R) space (requires --bpm and --egt)
+        --use-gtc-sample-names        use sample name in GTC files rather than GTC file name
+        --do-not-check-bpm            do not check whether BPM and GTC files match manifest file name
+        --genome-studio <file>        input a GenomeStudio final report file (in matrix format)
+        --no-version                  do not append version and command line to the header
+    -o, --output <file>               write output to a file [standard output]
+    -O, --output-type u|b|v|z|t[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF
+                                      t: GenomeStudio tab-delimited text output, 0-9: compression level [v]
+        --threads <int>               number of extra output compression threads [0]
+    -x, --extra <file>                write GTC metadata to a file
+    -v, --verbose                     print verbose information
+
+Manifest options:
+        --beadset-order               output BeadSetID normalization order (requires --bpm and --csv)
+        --fasta-flank                 output flank sequence in FASTA format (requires --csv)
+    -s, --sam-flank <file>            input flank sequence alignment in SAM/BAM format (requires --csv)
+        --genome-build <assembly>     genome build ID used to update the manifest file [GRCh38]
+
+Examples:
+    bcftools +gtc2vcf -i 5434246082_R03C01_Grn.idat
+    bcftools +gtc2vcf 5434246082_R03C01.gtc
+    bcftools +gtc2vcf -b HumanOmni2.5-4v1_H.bpm -c HumanOmni2.5-4v1_H.csv
+    bcftools +gtc2vcf -e HumanOmni2.5-4v1_H.egt
+    bcftools +gtc2vcf -c GSA-24v3-0_A1.csv -e GSA-24v3-0_A1_ClusterFile.egt -f human_g1k_v37.fasta -o GSA-24v3-0_A1.vcf
+    bcftools +gtc2vcf -c HumanOmni2.5-4v1_H.csv -f human_g1k_v37.fasta 5434246082_R03C01.gtc -o 5434246082_R03C01.vcf
+    bcftools +gtc2vcf -f human_g1k_v37.fasta --genome-studio GenotypeReport.txt -o GenotypeReport.vcf
+
+Examples of manifest file options:
+    bcftools +gtc2vcf -b GSA-24v3-0_A1.bpm -c GSA-24v3-0_A1.csv --beadset-order
+    bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --fasta-flank -o GSA-24v3-0_A1.fasta
+    bwa mem -M GCA_000001405.15_GRCh38_no_alt_analysis_set.fna GSA-24v3-0_A1.fasta -o GSA-24v3-0_A1.sam
+    bcftools +gtc2vcf -c GSA-24v3-0_A1.csv --sam-flank GSA-24v3-0_A1.sam -o GSA-24v3-0_A1.GRCh38.csv
+```
+{: .fs-3 .lh-tight }
+
 
 Although you see that a warning is thrown that the versions of bcftools and gtc2vcf are different,
 the command works anyway.
 
 {: .note }
-> Note how we call the plugin. We have used the relative path to gtc2vcf.so. 
-> It is usually convenient to use absolute paths as much as possible
+> - Note how we call the plugin. We have used the relative path to gtc2vcf.so. 
+>
+> - It is usually convenient to use absolute paths as much as possible
 
 To do so in our case, run `pwd` to get the absolute path for the current directory.
 ```shell
@@ -307,6 +323,7 @@ gencall \
 
 
 {: .example }
+> {: .opaque }
 > Converting IDAT files to GTC processed using the H3Africa chip
 > ```shell
 > gencall \
@@ -320,13 +337,17 @@ gencall \
 >    --gender-estimate-x-het-rate-threshold 0.2
 > ```
 
-Where,
+{: .highlight .fs-3 .lh-tight }
+> Where,
+>
+> - `calls` is the directory to which the GTC files will be saved.
+> - `intensities` is the directory containing the IDAT files. It could be a directory containing many subdirectories, 
+> each containing a number of IDAT files. IDAT files must be in pairs of red and green intensities. 
 
-- `calls` is the directory to which the GTC files will be saved.
-- `intensities` is the directory containing the IDAT files. It could be a directory containing many subdirectories,
-   each containing a number of IDAT files. IDAT files must be in pairs of red and green intensities. 
 
 ***Run `gencall --help` for more options. Choose options and adjust parameters to suit your project objectives***
+
+
 
 ### Convert GTC to VCF <a name="gtc-vcf"></a>
 ```shell
@@ -354,9 +375,10 @@ bcftools plugin ${plugin_dir}gtc2vcf.so \
    --output mycalls.vcf.gz.tbi
 ```
 
-Where,
+{: .highlight .fs-3 .lh-tight }
+> Where,
+> 
+> - `gtcs.list.txt` is a list containing the gtc file names with their (absolute preferably)
+> - `summary_stats.txt` is a file to which some important summary statistics like gencall call rate per sample will be stored
 
-- `gtcs.list.txt` is a list containing the gtc file names with their (absolute preferably)
-- `summary_stats.txt` is a file to which some important summary statistics like gencall call rate per sample will be stored
-
-
+[Back to top](#top)
