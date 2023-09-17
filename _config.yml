@@ -48,7 +48,7 @@ mermaid:
 # Aux links for the upper right navigation
 aux_links:
   "<span align=\"center\"><img src=\"/docs/assets/img/gr-on-github.png\" height=\"60%\" width=\"60%\"></span>":
-    - "https://github.com/GeneMAP-Research/genemap-research.github.io"
+    - "https://github.com/GeneMAP-Research/"
 #  "GR on GitHub":
 #    - "https://github.com/GeneMAP-Research/genemap-research.github.io"
   "<span align=\"center\"><img src=\"/docs/assets/img/genemap-logo.png\" height=\"100%\" width=\"100%\"></span>":
