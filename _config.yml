@@ -38,7 +38,7 @@ search:
   rel_url: true
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
-  button: false
+  button: true
 
 mermaid:
   # Version of mermaid library
@@ -56,6 +56,7 @@ aux_links:
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
+
 
 # Heading anchor links appear on hover over h1-h6 tags in page content
 # allowing users to deep link to a particular heading on a page.
@@ -92,3 +93,6 @@ callouts:
 
 # For copy button on code
 enable_copy_code_button: true
+
+
+footer_content: "Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href=\"https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt\">MIT license.</a> <a href=\"https://www.netlify.com/\">This site is powered by Netlify.</a>"
