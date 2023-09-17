@@ -82,12 +82,12 @@ callouts:
     color: yellow
   example:
     title: Example
-    color: purple
+    color: blue
   highlight:
     color: grey-lt
   question:
     title: Question
-    color: blue
+    color: purple
 
 
 # For copy button on code
