@@ -453,4 +453,3 @@ Place the first command above in your sbatch job submission script and submit on
 > - The work directory has been changed to a location with enough storage capacity.
 
 
-[Back to top](#top)

@@ -8,6 +8,9 @@ has_toc: false
 
 # Workfows
 
+GeneMAP workflows are build with nextflow to support seamless data processing.
+
+
 
 <p align="center"><a href="https://genemap-research.github.io/docs/workflows/gwas/"><img src="../assets/img/genemap-gwas.svg"></a></p>
 

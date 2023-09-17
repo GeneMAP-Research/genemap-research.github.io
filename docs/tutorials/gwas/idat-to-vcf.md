@@ -381,4 +381,4 @@ bcftools plugin ${plugin_dir}gtc2vcf.so \
 > - `gtcs.list.txt` is a list containing the gtc file names with their (absolute preferably)
 > - `summary_stats.txt` is a file to which some important summary statistics like gencall call rate per sample will be stored
 
-[Back to top](#top)
+
