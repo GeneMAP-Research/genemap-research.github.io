@@ -413,10 +413,9 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 
 
 {: .warning }
-> :warning:
 > If your IDAT files end with .gz (`.idat.gz`), make sure to unzip them before running the workflow.
 >
-> `gunzip ...`
+> `gunzip xxxxxxx.idat.gz`
 
 
 ### Locally on a compute node (interactive job)
