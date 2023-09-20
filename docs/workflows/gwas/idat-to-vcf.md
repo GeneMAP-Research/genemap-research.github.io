@@ -411,7 +411,8 @@ Workflow completed at: 2023-09-16T14:19:53.277+02:00
 > 
 > - Singularity appears to be the best options since docker and apptainer might not be available, and we might not be able to install iaap-cli on the cluster.
 > 
-> :warning: {: .warning }
+> {: .warning }
+> > :warning:
 > > If your IDAT files end with .gz (`.idat.gz`), make sure to unzip them before running the workflow.
 > >
 > > `gunzip ...`
