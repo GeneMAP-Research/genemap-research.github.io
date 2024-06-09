@@ -123,19 +123,10 @@ This example will pull and use a plink2 image (which is light-weight) using sing
 > module load <your singularity version>
 > ```
 
-
-## Test installation without selecting a profile
----
-The workflow will be executed locally and nextflow will expect all tools to be already loaded. So, we 
-must load plink2 for the test.
-
 ```sh
-
-module load <your version of plink2>
-
 ./genemapngs.sh test
 
-nextflow -c test.config run test.nf -w workdir 
+nextflow -c test.config run test.nf -w workdir -profile singularity
 ```
 
 If all goes well, you should see something like this, but can be different based on your plink2 version
@@ -175,10 +166,13 @@ Workflow completed at: 2024-06-09T06:47:43.261741+02:00
 {: .fs-3 .lh-tight }
 
 
-## Test installation selecting the singularity profile
+## Test installation without selecting profile
 ---
-Singularity is the preferred way of running the workflow since all tools needed are pulled directly from docker hub.
+The workflow will be executed locally and nextflow will expect all tools to be already loaded. So, we 
+must load plink2 for the test.
 ```sh
+module load <your version of plink2>
+
 ./genemapngs.sh test  #you don't need to run this again if you already did
 
 nextflow -c test.config run test.nf -w workdir -profile singularity
@@ -190,6 +184,7 @@ nextflow -c test.config run test.nf -w workdir -profile singularity
 
 
 # Final setup <a name="setup"></a>
+---
 Central to nexflow workflow are configuration (config) files. They direct nextflow on where to look for stuff or place stuff.
 There are a few more config files, in addition to the main config file, that we need to setup for the workflow to run smoothly. 
 We will do this step by step
