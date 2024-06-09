@@ -166,8 +166,7 @@ Workflow completed at: 2024-06-09T06:47:43.261741+02:00
 {: .fs-3 .lh-tight }
 
 
-## Test installation without selecting profile
----
+### Test installation without selecting profile
 The workflow will be executed locally and nextflow will expect all tools to be already loaded. So, we 
 must load plink2 for the test.
 ```sh
@@ -175,7 +174,7 @@ module load <your version of plink2>
 
 ./genemapngs.sh test  #you don't need to run this again if you already did
 
-nextflow -c test.config run test.nf -w workdir -profile singularity
+nextflow -c test.config run test.nf -w workdir
 
 # The result should be the same as above
 ```
