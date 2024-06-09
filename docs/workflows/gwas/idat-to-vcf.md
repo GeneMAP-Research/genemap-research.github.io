@@ -171,17 +171,17 @@ If you are not required to specify any of these in your job submission scripts, 
 # Running the workflow <a name="run"></a>
 ---
 
-The workflow runs on a simple logic based on nextflow profiles.
+The workflow runs on the concept of nextflow profiles.
 
-There are three profile categories in the workflow:
+There are three profile categories:
 - **executors**: there are three executors based on where you are working
   - local: this can be used anywhere; your computer (laptop) or any cluster (slurm, pbspro, etc). 
   - slurm: cluster running a slurm job workload manager/scheduler.
   - pbspro: cluster running a pbspro job workload manager/scheduler.
 <br>
 - **containers**: there are three containers
-  - apptainer: formerly singularity. Some clusters might still not run it
-  - singularity: now apptainer, Some clusters might still run it (actually most systems still do).
+  - apptainer: formerly singularity. Some clusters might still not run it.
+  - singularity: now apptainer. Most clusters might still run it.
   - docker: Most clusters do not run docker for security reasons. It can be used on local computers.
 <br>
 - **references**: there are two references
@@ -206,7 +206,7 @@ nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <w
 
 ## Test <a name="test"></a>
 ---
-Let's see an example. This example will pull and use a plink2 image (which is light-weight) using singularity.
+This example will pull and use a plink2 image (which is light-weight) using singularity.
 
 
 {: .note .fs-3 }

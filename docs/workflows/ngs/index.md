@@ -13,7 +13,9 @@ nav_order: 3
 - [Installation](#install)
   - [Requirements](#requirements)
   - [Install](#procedure)
-  - [Setup](#setup)
+- [Things to note before running the workflow](#run)
+- [Test the installation](#test)
+- [Final setup](#setup)
 
 ---
 
@@ -45,7 +47,6 @@ nav_order: 3
 
 ---
 
-
 ## Install <a name="procedure"></a>
 Navigate to the path where you would like to run the workflow from and run the code below.
 
@@ -57,16 +58,87 @@ cd genemapngs-0.1
 ```
 ---
 
-## Test the intallation
-Make sure you have nexflow loaded and that singularity is also working
+{: .important .fs-3 }
+> Without the main workflow configuration file (`nextflow.config`) nextflow cannot run at all.
+> 
+> Copy the `system.config` file to `nextflow.config`.
+> ```
+> cp system.config nextflow.config
+> ```
+>
+> Then edit the `nextflow.config` file with the correct parameter values.
 
+---
+
+
+# Things to note before running the workflow <a name="run"></a>
+---
+
+The workflow runs on the concept of nextflow profiles.
+
+There are three profile categories:
+- **executors**: there are three executors based on where you are working
+  - local: this can be used anywhere; your computer (laptop) or any cluster (slurm, pbspro, etc). 
+  - slurm: cluster running a slurm job workload manager/scheduler.
+  - pbspro: cluster running a pbspro job workload manager/scheduler.
+<br>
+- **containers**: there are three containers
+  - apptainer: formerly singularity. Some clusters might still not run it.
+  - singularity: now apptainer. Most clusters still run it.
+  - docker: Most clusters do not run docker for security reasons. It can be used on local computers.
+<br>
+- **references**: there are three references
+  - hg19: human reference build 37 or GRCh37
+  - hg38: human reference build 38 or GRCh38
+  - t2t: human Telomere-to-Telomere reference (T2T-CHM13)
+<br>
+
+The workflow commandline is built as follows.
+
+```sh
+nextflow run <workflow script> -profile <executor>,<container>,<reference> -w <work directory>
 ```
+
+[Back to top](#top)
+
+
+## Test the installation <a name="test"></a>
+---
+This example will pull and use a plink2 image (which is light-weight) using singularity.
+
+
+{: .note .fs-3 }
+> First, make sure nextflow and singularity are loaded and working.
+> Check how these are loaded on your system. This should be done on a worker node via interactive
+> job.
+>
+> ```sh
+> module load <your nextflow version>
+> ```
+> 
+> Most systems have singularity automatically loaded on worker nodes. Try by simply running `singularity`.
+>
+> Otherwise, load singularity
+> ```sh
+> module load <your singularity version>
+> ```
+
+
+## Test installation without selecting a profile
+---
+The workflow will be executed locally and nextflow will expect all tools to be already loaded. So, we 
+must load plink2 for the test.
+
+```sh
+
+module load <your version of plink2>
+
 ./genemapngs.sh test
 
 nextflow -c test.config run test.nf -w workdir 
 ```
 
-If all goes well, you should see something like this
+If all goes well, you should see something like this, but can be different based on your plink2 version
 ```
 N E X T F L O W  ~  version 23.04.3
 Launching `test.nf` [condescending_hopper] DSL2 - revision: 943b38a3a4
@@ -103,9 +175,24 @@ Workflow completed at: 2024-06-09T06:47:43.261741+02:00
 {: .fs-3 .lh-tight }
 
 
-## Setup <a name="setup"></a>
-- Central to nexflow workflows is the concept of configuration files. They direct nextflow on where to look or place stuff.
-- There are a few configuration files that we need to setup for the workflow to run smoothly. We will do this step by step
+## Test installation selecting the singularity profile
+---
+Singularity is the preferred way of running the workflow since all tools needed are pulled directly from docker hub.
+```sh
+./genemapngs.sh test  #you don't need to run this again if you already did
+
+nextflow -c test.config run test.nf -w workdir -profile singularity
+
+# The result should be the same as above
+```
+
+[Back to top](#top)
+
+
+# Final setup <a name="setup"></a>
+Central to nexflow workflow are configuration (config) files. They direct nextflow on where to look for stuff or place stuff.
+There are a few more config files, in addition to the main config file, that we need to setup for the workflow to run smoothly. 
+We will do this step by step
 - ...
 
 
