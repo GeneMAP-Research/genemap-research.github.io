@@ -51,10 +51,10 @@ nav_order: 3
 Navigate to the path where you would like to run the workflow from and run the code below.
 
 ```sh
-wget https://github.com/GeneMAP-Research/genemapngs/archive/refs/tags/v0.1.tar.gz
-tar zxvf v0.1.tar.gz
-rm v0.1.tar.gz
-cd genemapngs-0.1
+wget https://github.com/GeneMAP-Research/genemapngs/archive/refs/tags/v1.0.0.tar.gz
+tar zxvf v1.0.0.tar.gz
+rm v1.0.0.tar.gz
+cd genemapngs-1.0.0
 ```
 ---
 
