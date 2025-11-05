@@ -1,9 +1,8 @@
 ---
 layout: default
 title: PGx Review
-nav_order: 2
-nav_exclude: false
-has_toc: false
+parent: Projects
+nav_order: 1
 ---
 
 # Enhancing Large-Scale Pharmacogenetic Studies in African Populations for Clinical Care and Drug Development
